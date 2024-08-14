@@ -5,7 +5,5 @@ export default defineNuxtConfig({
   devServer: {
     port: 4501
   },
-  app: {
-    baseURL: 'https://ramaddict.github.io/'
-  }
+
 })
