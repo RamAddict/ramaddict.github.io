@@ -1,3 +1,1 @@
-<template>
-    dude
-</template>
+<template>dude</template>
