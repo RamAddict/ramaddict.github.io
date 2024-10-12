@@ -8,7 +8,12 @@ export default defineNuxtConfig({
     port: 4501,
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/image'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/robots',
+  ],
   tailwindcss: {
     config: {
       theme: {

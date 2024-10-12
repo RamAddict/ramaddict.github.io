@@ -1,7 +1,10 @@
 <template>
   <div class="px-4 py-8 sm:px-8 sm:pb-10 sm:pt-14 xl:pt-20">
     <header class="flex flex-col gap-4">
-      <NuxtLink to="/" class="m-auto flex shrink-0 flex-col items-center justify-center gap-4 overflow-hidden">
+      <NuxtLink
+        to="/"
+        class="m-auto flex shrink-0 flex-col items-center justify-center gap-4 overflow-hidden"
+      >
         <NuxtImg
           preload
           src="me2.jpg"
@@ -13,12 +16,12 @@
           format="webp"
         />
         <div class="text-4xl font-bold">
-          <a
+          <button
             class="hide-right flex flex-col items-center leading-5 after:mt-2 after:inline-block after:h-[6px]
               after:w-full after:max-w-6 after:rounded-full after:bg-yellow-600 after:sm:max-w-8"
-            @click="playCroak()"
-            >Arthur Bianco</a
           >
+            Arthur Bianco
+          </button>
         </div>
       </NuxtLink>
       <nav class="flex flex-row justify-center gap-6 text-xl text-gray-700 sm:flex-row sm:text-3xl">
@@ -34,11 +37,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-function playCroak() {
-  new Audio('Frog-sound-ribbit.mp3').play();
-}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 @keyframes smooth-appear {
