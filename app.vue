@@ -3,6 +3,7 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
+<script></script>
 <style>
 .page-enter-active,
 .page-leave-active {

@@ -1,40 +1,36 @@
 <template>
-  <div class="px-4 py-8 sm:px-8 sm:pb-10 sm:pt-10 xl:pt-12">
+  <div class="m-auto max-w-4xl py-6">
     <header class="flex flex-col gap-4">
-      <NuxtLink
-        to="/"
-        class="m-auto flex shrink-0 flex-col items-center justify-center gap-4 overflow-hidden"
-      >
-        <NuxtImg
-          preload
-          src="me2.jpg"
-          class="hide-left sm:h-[10rem] w-32 rounded-full grayscale sm:w-auto"
-          width="200"
-          height="200"
-          fit="cover"
-          placeholder
-          format="webp"
-        />
-        <div class="text-4xl font-bold">
-          <button
-            class="hide-right flex flex-col items-center leading-5 after:mt-2 after:inline-block after:h-[6px]
-              after:w-full after:max-w-6 after:rounded-full after:bg-yellow-600 after:sm:max-w-8"
+      <nav class="flex flex-row justify-between">
+        <div class="flex flex-row gap-4">
+          <NuxtLink
+            to="/"
+            class="m-auto flex shrink-0 flex-col items-center justify-center gap-4 overflow-hidden"
           >
-            Arthur Bianco
-          </button>
+            <svg
+              class="hover:stroke-yellow-600"
+              height="56"
+              width="56"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <
+              <text y="45" x="" class="font-cursive text-5xl">A &gt;</text>
+            </svg>
+            <div class="m-auto"></div>
+          </NuxtLink>
         </div>
-      </NuxtLink>
-      <nav class="flex flex-row justify-center gap-6 text-xl text-gray-700 sm:flex-row sm:text-3xl">
-        <NuxtLink class="duration-700 hover:text-yellow-600 hover:transition-opacity"
-          >Projects</NuxtLink
-        ><NuxtLink class="duration-700 hover:text-yellow-600 hover:transition-opacity"
-          >Work</NuxtLink
-        ><NuxtLink
-          :class="{ 'text-yellow-600': route.path === '/contact' }"
-          to="contact"
-          class="duration-700 hover:text-yellow-600 hover:transition-opacity"
-          >Contact</NuxtLink
-        >
+        <div class="flex flex-row gap-8 text-lg">
+          <NuxtLink class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            >Projects</NuxtLink
+          ><NuxtLink class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            >Work</NuxtLink
+          ><NuxtLink
+            :class="{ 'text-yellow-600': route.path === '/contact' }"
+            to="contact"
+            class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            >Contact</NuxtLink
+          >
+        </div>
       </nav>
     </header>
   </div>
