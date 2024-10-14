@@ -5,7 +5,7 @@
         <NuxtImg
           preload
           src="me2.jpg"
-          class="hide-left w-32 rounded-full grayscale h-32 sm:h-auto"
+          class="hide-left h-32 w-32 rounded-full grayscale sm:h-auto"
           width="200"
           height="200"
           fit="cover"
@@ -45,6 +45,13 @@
 </template>
 
 <script setup lang="ts"></script>
+
+<style lang="css">
+body {
+  @apply overflow-hidden;
+}
+</style>
+
 <style scoped lang="scss">
 @keyframes smooth-appear {
   to {
@@ -57,7 +64,6 @@
   opacity: 0;
   transform: translateX(-200%);
   animation: smooth-appear 3s ease forwards;
-  // animation-delay: 2s;
 }
 .hide-right {
   opacity: 0.4;
@@ -71,5 +77,4 @@
   animation: smooth-appear 3s ease forwards;
   animation-delay: 3s;
 }
-
 </style>
