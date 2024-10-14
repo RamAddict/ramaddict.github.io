@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxtjs/robots',
     '@nuxtjs/color-mode',
   ],
   tailwindcss: {

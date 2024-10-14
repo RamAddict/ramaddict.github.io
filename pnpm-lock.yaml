@@ -14,9 +14,6 @@ dependencies:
   '@nuxtjs/color-mode':
     specifier: ^3.5.1
     version: 3.5.1
-  '@nuxtjs/robots':
-    specifier: ^4.1.7
-    version: 4.1.7(vite@5.4.8)(vue@3.5.12)
   '@nuxtjs/tailwindcss':
     specifier: ^6.12.1
     version: 6.12.1
@@ -1744,29 +1741,6 @@ packages:
       - magicast
       - rollup
       - supports-color
-      - webpack-sources
-    dev: false
-
-  /@nuxtjs/robots@4.1.7(vite@5.4.8)(vue@3.5.12):
-    resolution: {integrity: sha512-1rz2oyBNmpfIzqNG9LfGft+H8Wpp1BMmPyNhkm7BuG/jUXTBFaCh6HDeK6Otx2y53Z9JtCDhiIs/JHj/L4WLPw==}
-    dependencies:
-      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(vite@5.4.8)
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)
-      consola: 3.2.3
-      defu: 6.1.4
-      nuxt-site-config: 2.2.18(vite@5.4.8)(vue@3.5.12)
-      nuxt-site-config-kit: 2.2.18(vue@3.5.12)
-      pathe: 1.1.2
-      pkg-types: 1.2.1
-      sirv: 2.0.4
-      std-env: 3.7.0
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vite
-      - vue
       - webpack-sources
     dev: false
 
@@ -5194,44 +5168,6 @@ packages:
     hasBin: true
     dev: false
 
-  /nuxt-site-config-kit@2.2.18(vue@3.5.12):
-    resolution: {integrity: sha512-iPtf2X1fvI9m9VV04edSqNGC2EzQ1aLB7F2/AOxYRktCJxHeTdBGifuNPc90EaEIOfWx+gf3lmRd4EppGoAMSA==}
-    dependencies:
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)
-      '@nuxt/schema': 3.13.2
-      pkg-types: 1.2.1
-      site-config-stack: 2.2.18(vue@3.5.12)
-      std-env: 3.7.0
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vue
-      - webpack-sources
-    dev: false
-
-  /nuxt-site-config@2.2.18(vite@5.4.8)(vue@3.5.12):
-    resolution: {integrity: sha512-NU39ANP1kvRBzpEWV496y/lf9PKVv3t1VKX3zmQ1POcbzAXU4gm0Mh5NKOaLEcoXj6bQnziFNqjzHX3DAA8Aog==}
-    dependencies:
-      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(vite@5.4.8)
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)
-      '@nuxt/schema': 3.13.2
-      nuxt-site-config-kit: 2.2.18(vue@3.5.12)
-      pathe: 1.1.2
-      pkg-types: 1.2.1
-      sirv: 2.0.4
-      site-config-stack: 2.2.18(vue@3.5.12)
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vite
-      - vue
-      - webpack-sources
-    dev: false
-
   /nuxt@3.13.2(sass-embedded@1.79.5)(vite@5.4.8):
     resolution: {integrity: sha512-Bjc2qRsipfBhjXsBEJCN+EUAukhdgFv/KoIR5HFB2hZOYRSqXBod3oWQs78k3ja1nlIhAEdBG533898KJxUtJw==}
     engines: {node: ^14.18.0 || >=16.10.0}
@@ -6649,15 +6585,6 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
-    dev: false
-
-  /site-config-stack@2.2.18(vue@3.5.12):
-    resolution: {integrity: sha512-kwyuCwYZBJikuLN3IB15cGT7SHQQxAitLaDs1b6eNZbb+tBHubVUhj0pnFZnZZi4+5eNCO+3HiZxaU3qpFxP2A==}
-    peerDependencies:
-      vue: ^3
-    dependencies:
-      ufo: 1.5.4
-      vue: 3.5.12
     dev: false
 
   /slash@5.1.0:

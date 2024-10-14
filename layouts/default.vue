@@ -7,6 +7,7 @@
 <script setup lang="ts">
 useHead({
   title: "Arthur Bianco's - Personal website",
+  meta: [{ name: 'description', content: "Arthur Bianco's personal website" }],
 });
 </script>
 
