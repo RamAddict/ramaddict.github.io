@@ -21,9 +21,12 @@
       </div>
       <p class="text-2xl">
         I build software for the web with
-        <select class="border-b-4 border-b-[#41b883]" id="">
-          <option class="">Nuxt</option>
-          <option class="">Angular</option></select
+        <span class="inline-block w-20 border-b-4 border-b-[#41b883]">{{ front }}</span
+        >, <span class="inline-block w-20 border-b-4 border-b-[#ea2868]">{{ back }}</span
+        >, and <span class="inline-block border-b-4 border-b-[#ff9900]">AWS</span>.
+        <!-- <select class="border-b-4 border-b-[#41b883] transition-opacity" id="">
+          <option class="transition-opacity">Nuxt</option>
+          <option class="transition-opacity">Angular</option></select
         >,
         <select class="border-b-4 border-b-[#ea2868]" name="" id="">
           <option class="">Nestjs</option>
@@ -32,7 +35,7 @@
         >, and
         <select class="border-b-4 border-b-[#ff9900]" name="" id="">
           <option class="z-10 border-b-4 border-b-[#009900]">AWS</option>
-        </select>
+        </select> -->
       </p>
       <p class="text-xl">
         I'm currently working with an Irish startup on a product called
@@ -44,7 +47,19 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const frontValues = ['Nuxt', 'Angular', 'Nextjs', 'Svelte'];
+const backValues = ['Express', 'Spring', 'Nestjs'];
+const front = ref<string>(frontValues[0]);
+const back = ref<string>(backValues[0]);
+
+onMounted(() => {
+  setInterval(() => {
+    front.value = frontValues[Math.floor(Math.random() * frontValues.length)];
+    back.value = backValues[Math.floor(Math.random() * backValues.length)];
+  }, 1000);
+});
+</script>
 
 <style lang="css">
 body {
