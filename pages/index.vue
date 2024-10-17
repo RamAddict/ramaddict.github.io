@@ -1,7 +1,7 @@
 <template>
-  <main class="mx-auto max-w-4xl">
-    <section class="flex h-80 flex-col gap-3 rounded-3xl p-8 py-12">
-      <div class="flex flex-row gap-4">
+  <main class="mx-auto max-w-5xl">
+    <section class="flex flex-col gap-8 rounded-3xl p-8 py-8">
+      <div class="just flex flex-row gap-4">
         <NuxtImg
           preload
           src="me2.jpg"
@@ -19,30 +19,44 @@
           </h1>
         </div>
       </div>
-      <p class="text-2xl">
-        I build software for the web with
-        <span class="inline-block w-20 border-b-4 border-b-[#41b883]">{{ front }}</span
-        >, <span class="inline-block w-20 border-b-4 border-b-[#ea2868]">{{ back }}</span
-        >, and <span class="inline-block border-b-4 border-b-[#ff9900]">AWS</span>.
-        <!-- <select class="border-b-4 border-b-[#41b883] transition-opacity" id="">
-          <option class="transition-opacity">Nuxt</option>
-          <option class="transition-opacity">Angular</option></select
-        >,
-        <select class="border-b-4 border-b-[#ea2868]" name="" id="">
-          <option class="">Nestjs</option>
-          <option class="">Express</option>
-          <option class="">Spring</option></select
-        >, and
-        <select class="border-b-4 border-b-[#ff9900]" name="" id="">
-          <option class="z-10 border-b-4 border-b-[#009900]">AWS</option>
-        </select> -->
-      </p>
-      <p class="text-xl">
-        I'm currently working with an Irish startup on a product called
-        <a href="https://www.slick.plus" target="_blank" class="underline hover:text-[#ff3adf]"
-          >Slick+</a
-        >.
-      </p>
+      <div class="flex flex-col gap-2">
+        <p class="text-2xl leading-4">
+          I build software for the web with
+          <span class="inline-block w-20 border-b-4 border-b-[#41b883]">{{ front }}</span
+          >, <span class="inline-block w-20 border-b-4 border-b-[#ea2868]">{{ back }}</span
+          >, and <span class="inline-block border-b-4 border-b-[#ff9900]">AWS</span>.
+          <!-- <select class="border-b-4 border-b-[#41b883] transition-opacity" id="">
+            <option class="transition-opacity">Nuxt</option>
+            <option class="transition-opacity">Angular</option></select
+          >,
+          <select class="border-b-4 border-b-[#ea2868]" name="" id="">
+            <option class="">Nestjs</option>
+            <option class="">Express</option>
+            <option class="">Spring</option></select
+          >, and
+          <select class="border-b-4 border-b-[#ff9900]" name="" id="">
+            <option class="z-10 border-b-4 border-b-[#009900]">AWS</option>
+          </select> -->
+        </p>
+        <p class="text-2xl">
+          I'm currently working with an Irish startup on a product called
+          <a href="https://www.slick.plus" target="_blank" class="hover:underline">Slick+</a>.
+        </p>
+        <p class="text-2xl">
+          Find me on
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/arthurbianco/"
+            class="hover:underline"
+            >Linkedin</a
+          >,
+          <a target="_blank" href="https://github.com/RamAddict" class="hover:underline">GitHub</a>
+          and
+          <a target="_blank" href="https://www.instagram.com/apbiancoo/" class="hover:underline"
+            >Instagram</a
+          >.
+        </p>
+      </div>
     </section>
   </main>
 </template>
