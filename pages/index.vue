@@ -1,6 +1,6 @@
 <template>
   <main class="mx-auto max-w-5xl">
-    <section class="flex flex-col gap-8 rounded-3xl p-8 py-8">
+    <section class="flex flex-col gap-8 rounded-3xl px-8">
       <div class="just flex flex-row gap-4">
         <NuxtImg
           preload
@@ -58,6 +58,9 @@
         </p>
       </div>
     </section>
+    <section>
+      <hr class="bg-shadow mb-8 h-[1px] border-0" />
+    </section>
   </main>
 </template>
 
@@ -95,13 +98,13 @@ body {
   animation: smooth-appear 3s ease forwards;
 }
 .hide-right {
-  opacity: 0.4;
+  opacity: 0;
   transform: translateX(200%);
   animation: smooth-appear 3s ease forwards;
   animation-delay: 1s;
 }
 .hide-right-delay {
-  opacity: 0.4;
+  opacity: 0;
   transform: translateX(200%);
   animation: smooth-appear 3s ease forwards;
   animation-delay: 3s;

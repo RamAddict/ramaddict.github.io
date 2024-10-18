@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto max-w-4xl py-6">
+  <div class="m-auto max-w-5xl py-6 px-8">
     <header class="flex flex-col gap-4">
       <nav class="flex flex-row justify-between">
         <div class="flex flex-row gap-4">
@@ -22,7 +22,10 @@
         <div class="flex flex-row gap-8 text-lg">
           <NuxtLink class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Projects</NuxtLink
-          ><NuxtLink class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+          ><NuxtLink
+            :class="{ 'text-yellow-600': route.path === '/work' }"
+            to="work"
+            class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Work</NuxtLink
           ><NuxtLink
             :class="{ 'text-yellow-600': route.path === '/contact' }"

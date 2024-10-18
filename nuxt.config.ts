@@ -11,15 +11,16 @@ export default defineNuxtConfig({
     port: 4501,
   },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/fonts',
-    '@nuxt/image',
-    '@nuxtjs/color-mode',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/color-mode'],
   tailwindcss: {
     config: {
       theme: {
+        extend: {
+          colors: {
+            'base-100': 'var(--b1)',
+            'base-content': 'var(--bc)',
+          },
+        },
         fontFamily: {
           spartan: ['League Spartan', 'sans-serif'],
           sans: ['League Spartan', ...fontFamily.sans],

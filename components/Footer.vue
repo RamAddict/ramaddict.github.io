@@ -6,9 +6,9 @@ function playCroak() {
 </script>
 
 <template>
+  <hr class="mx-8 opacity-50">
   <footer
-    class="mx-auto mt-10 flex max-w-5xl justify-between border-t-2 border-current px-4 pt-8 text-sm sm:mt-14
-      sm:px-0 sm:pt-10 sm:text-base xl:mt-20"
+    class="flex flex-row justify-between px-8 py-6"
   >
     <span>© {{ new Date().getFullYear() }} Arthur Bianco.</span>
     <span>Made with <u>Nuxt</u>. <span class="cursor-pointer" @click="playCroak">🐸</span></span>

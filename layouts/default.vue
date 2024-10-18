@@ -1,5 +1,5 @@
 <template>
-  <Header></Header>
+  <Header class="pb-12"></Header>
   <slot />
   <Footer></Footer>
 </template>
@@ -12,38 +12,35 @@ useHead({
 </script>
 
 <style lang="scss">
+:root {
+  --b1: oklch(100% 3.5594404384177905e-8 106.37411429114086);
+  --bc: oklch(0% 0 0 / 99%);
+}
+
 .transition-color-change {
   transition: background-color 0.2s ease-in-out;
 }
 
 body {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.99);
-  stroke: rgba(0, 0, 0, 0.99);
+  @apply bg-base-100;
+  @apply text-base-content;
+  @apply stroke-base-content;
   select {
-    @apply bg-[#fff];
+    @apply bg-base-100;
     @apply transition-color-change;
   }
   @apply transition-color-change;
 }
 .dark-mode {
-  body {
-    @apply bg-[#282725];
-    stroke: #ebf4f1;
-    color: #ebf4f1;
-  }
-  select {
-    @apply bg-[#282725];
-  }
+  --b1: oklch(27.31% 0.0039 84.58);
+  --bc: oklch(95.96% 0.0103 174.27);
 }
-.sepia-mode body {
-  background-color: #f1e7d0;
-  stroke: #433422;
-  color: #433422;
-  select {
-    @apply bg-[#f1e7d0];
-  }
+
+.sepia-mode {
+  --b1: oklch(92.98% 0.0323 87.29);
+  --bc: oklch(33.66% 0.0362 71.19);
 }
+
 *:focus {
   outline: none;
 }
