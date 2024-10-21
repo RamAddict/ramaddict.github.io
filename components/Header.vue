@@ -1,36 +1,33 @@
 <template>
-  <div class="m-auto max-w-5xl py-6 px-8">
+  <div class="m-auto max-w-5xl px-8 py-6">
     <header class="flex flex-col gap-4">
       <nav class="flex flex-row justify-between">
-        <div class="flex flex-row gap-4">
-          <NuxtLink
-            to="/"
-            class="m-auto flex shrink-0 flex-col items-center justify-center gap-4 overflow-hidden"
-          >
-            <svg
-              class="hover:stroke-yellow-600"
-              height="56"
-              width="56"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <
-              <text y="45" x="" class="font-cursive text-5xl">A &gt;</text>
-            </svg>
-            <div class="m-auto"></div>
-          </NuxtLink>
+        <div class="flex flex-row">
+          <div class="m-auto flex shrink-0 flex-row items-center justify-center gap-1">
+            <NuxtLink to="/" class="">
+              <span class="font-cursive text-5xl font-bold antialiased hover:text-yellow-600"
+                >A</span
+              >
+            </NuxtLink>
+            <NuxtLink class="mt-auto" v-for="p of links" :to="p.to">
+              <span class="font-cursive text-2xl font-bold antialiased hover:text-yellow-600"
+                >/{{ p.label.toLowerCase().split(' ').at(-1) }}</span
+              >
+            </NuxtLink>
+          </div>
         </div>
         <div class="flex flex-row gap-8 text-lg">
-          <NuxtLink class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+          <NuxtLink class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Projects</NuxtLink
           ><NuxtLink
             :class="{ 'text-yellow-600': route.path === '/work' }"
-            to="work"
-            class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            to="/work"
+            class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Work</NuxtLink
           ><NuxtLink
             :class="{ 'text-yellow-600': route.path === '/contact' }"
-            to="contact"
-            class="m-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            to="/contact"
+            class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Contact</NuxtLink
           >
         </div>
@@ -41,6 +38,10 @@
 
 <script setup lang="ts">
 const route = useRoute();
+const links = useBreadcrumbItems({ hideRoot: true });
+onMounted(() => {
+  console.log(links.value);
+});
 </script>
 
 <style scoped>

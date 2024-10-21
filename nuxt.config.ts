@@ -11,7 +11,13 @@ export default defineNuxtConfig({
     port: 4501,
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/seo',
+  ],
   tailwindcss: {
     config: {
       theme: {
@@ -39,7 +45,7 @@ export default defineNuxtConfig({
     },
   },
   colorMode: {
-    preference: 'system',
-    fallback: 'dark',
+    preference: 'dark',
+    fallback: 'system',
   },
 });

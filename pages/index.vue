@@ -80,11 +80,11 @@ onMounted(() => {
 
 <style lang="css">
 body {
-  @apply overflow-hidden;
+  @apply overflow-x-hidden;
 }
 </style>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 @keyframes smooth-appear {
   to {
     opacity: 1;

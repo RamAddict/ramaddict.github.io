@@ -14,7 +14,7 @@ useHead({
 <style lang="scss">
 :root {
   --b1: oklch(100% 3.5594404384177905e-8 106.37411429114086);
-  --bc: oklch(0% 0 0 / 99%);
+  --bc: oklch(38.67% 0 0);
 }
 
 .transition-color-change {
