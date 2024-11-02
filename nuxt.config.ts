@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
+    '@vueuse/nuxt',
   ],
   tailwindcss: {
     config: {
@@ -31,6 +32,7 @@ export default defineNuxtConfig({
           spartan: ['League Spartan', 'sans-serif'],
           sans: ['League Spartan', ...fontFamily.sans],
           cursive: ['Lavishly Yours', 'cursive'],
+          mono: ['Fira Code', 'monospace'],
         },
       },
     },

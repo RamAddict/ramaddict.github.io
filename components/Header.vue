@@ -39,9 +39,6 @@
 <script setup lang="ts">
 const route = useRoute();
 const links = useBreadcrumbItems({ hideRoot: true });
-onMounted(() => {
-  console.log(links.value);
-});
 </script>
 
 <style scoped>
