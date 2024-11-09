@@ -34,10 +34,10 @@
         During that time, I realized that the fingerprint validation could be performed in the
         front-end. I didn't find any libraries that performed this task, so I set out to create my
         own. Instead of reinventing the wheel, I found the old NIST project with the C code that did
-        the validations we needed. I then adapted it and used emscripten to compile to web assmebly,
+        the validations we needed. I then adapted it and used emscripten to compile to web assembly,
         thus creating an open-source library called
         <NuxtLink
-          class="underline duration-700 hover:text-yellow-600 hover:transition-opacity"
+          class="link"
           to="https://github.com/RamAddict/NBIS-JS"
           >NBIS-JS</NuxtLink
         >.
@@ -45,7 +45,7 @@
       <p>
         The result was a finger capturing process that no longer required an API, simplifying the
         integration process for new clients and speeding up biometric validation for end users with
-        poor internet connections. Also, this openned up the possibility to collect user biometrics
+        poor internet connections. Also, this opened up the possibility to collect user biometrics
         in the browser even in situations without an internet connection to hit the API.
       </p>
       <p>
@@ -85,7 +85,7 @@
           to="https://daisyui.com/"
           >DaisyUI</NuxtLink
         >, Tailwind, Svelte. This combination proved very effective in providing the customizability
-        needed along with ease of development and performance granted by Sveltes web-component api.
+        needed along with ease of development and performance granted by Svelte's web-component api.
         This web-component also allowed for the expansion of the face capture capabilities. Namely,
         including face detection with custom parameter validation, automatic picture taking, and
         liveness checking, all able to be configured by the user and loaded dynamically, saving
@@ -98,7 +98,7 @@
         alt="Print of the web collector component's face capture tab"
       ></NuxtImg>
       <p>
-        Allthough this component is not open-source, it is available on
+        Although this component is not open-source, it is available on
         <NuxtLink
           class="underline duration-700 hover:text-yellow-600 hover:transition-opacity"
           to="https://www.npmjs.com/package/bry-biometric-collector"

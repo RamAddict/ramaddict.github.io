@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
+    '@formkit/nuxt'
   ],
   tailwindcss: {
     config: {

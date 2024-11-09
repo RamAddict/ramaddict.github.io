@@ -12,10 +12,14 @@
       <h2 class="text-2xl">Most recent work</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-2 gap-4">
-        <NuxtLink class="border-base-content card flex aspect-video flex-col justify-center border">
+        <NuxtLink to="/work/slick-plus" class="border-base-content card flex aspect-video flex-col justify-center border">
           <div class="card-content">
             <NuxtImg width="160" src="/work/slick-plus-logo.svg" alt="bry logo" class="m-auto">
             </NuxtImg>
+            <div class="absolute bottom-0">
+              <p>Slick Plus</p>
+              <p class="text-xs">Mar 2024 - Present</p>
+            </div>
           </div>
         </NuxtLink>
         <NuxtLink
@@ -25,11 +29,19 @@
           <div class="card-content">
             <NuxtImg width="120" src="/work/bry-logo-blue.webp" alt="bry logo" class="m-auto">
             </NuxtImg>
+            <div class="absolute bottom-0">
+              <p>Bry Tecnologia</p>
+              <p class="text-xs">Mar 2022 - Mar 2024</p>
+            </div>
           </div>
         </NuxtLink>
-        <NuxtLink class="border-base-content card flex aspect-video flex-col justify-center border">
+        <NuxtLink to="/work/ecl" class="border-base-content card flex aspect-video flex-col justify-center border">
           <div class="card-content">
             <NuxtImg width="120" src="/work/ecl-logo.png" alt="bry logo" class="m-auto"> </NuxtImg>
+            <div class="absolute bottom-0">
+              <p>Embedded Computing Laboratory</p>
+              <p class="text-xs">Aug 2018 - Jul 2020</p> 
+            </div>
           </div>
         </NuxtLink>
       </div>

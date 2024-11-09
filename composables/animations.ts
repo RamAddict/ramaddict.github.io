@@ -1,4 +1,4 @@
-export const useScrambler = (finalTitle: string, letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') => {
+export const useScrambler = (finalTitle: string, speed = 33, letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') => {
   let title = ref(finalTitle);
   let isScrambling = ref(false);
 
@@ -22,7 +22,7 @@ export const useScrambler = (finalTitle: string, letters = 'ABCDEFGHIJKLMNOPQRST
         isScrambling.value = false;
       }
       iterations += 1 / 3;
-    }, 33);
+    }, speed);
   }
   return { scramble, text: title, isScrambling };
 };

@@ -1,16 +1,17 @@
 <template>
-  <main class="mx-auto max-w-5xl">
-    <section class="flex flex-col gap-8 rounded-3xl px-8">
+  <main class="mx-auto max-w-5xl px-8">
+    <section class="flex flex-col gap-8 rounded-3xl">
       <div class="just flex flex-row gap-4">
         <NuxtImg
           preload
-          src="me2.jpg"
-          class="hide-left h-32 w-32 rounded-full grayscale sm:h-auto"
+          src="me.jpg"
+          class="hide-left h-32 w-32 rounded-full grayscale sm:h-auto scale-[4]"
           width="200"
           height="200"
           fit="cover"
           placeholder
           format="webp"
+          alt="Arthur Bianco" 
         />
         <div class="my-auto flex flex-col gap-2">
           <h2 class="hide-right text-4xl">Hi, my name is Arthur.</h2>
@@ -81,6 +82,10 @@ onMounted(() => {
 <style lang="css">
 body {
   @apply overflow-x-hidden;
+}
+
+.link {
+  @apply underline duration-700 hover:text-yellow-600 hover:transition-opacity;
 }
 </style>
 

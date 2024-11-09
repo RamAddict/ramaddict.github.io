@@ -5,26 +5,35 @@
         <div class="flex flex-row">
           <div class="m-auto flex shrink-0 flex-row items-center justify-center gap-1">
             <NuxtLink to="/" class="">
-              <span class="font-cursive text-5xl font-bold antialiased hover:text-yellow-600"
+              <span
+                class="font-cursive text-5xl font-bold antialiased duration-700 hover:text-yellow-600
+                  hover:transition-opacity"
                 >A</span
               >
             </NuxtLink>
             <NuxtLink class="mt-auto" v-for="p of links" :to="p.to">
-              <span class="font-cursive text-2xl font-bold antialiased hover:text-yellow-600"
+              <span
+                class="font-cursive text-2xl font-bold antialiased duration-700 hover:text-yellow-600
+                  hover:transition-opacity"
                 >/{{ p.label.toLowerCase().split(' ').at(-1) }}</span
               >
             </NuxtLink>
           </div>
         </div>
         <div class="flex flex-row gap-8 text-lg">
-          <NuxtLink class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
-            >Projects</NuxtLink
-          ><NuxtLink
+          <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/work' }"
             to="/work"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Work</NuxtLink
-          ><NuxtLink
+          >
+          <!-- <NuxtLink
+            :class="{ 'text-yellow-600': route.path === '/work' }"
+            to="/work"
+            class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
+            >Side Projects</NuxtLink
+          > -->
+          <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/contact' }"
             to="/contact"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"

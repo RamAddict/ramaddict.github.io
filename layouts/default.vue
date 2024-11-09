@@ -25,9 +25,10 @@ body {
   @apply bg-base-100;
   @apply text-base-content;
   @apply stroke-base-content;
-  select {
+  select, input, textarea { 
     @apply bg-base-100;
     @apply transition-color-change;
+    @apply border border-base-content;
   }
   @apply transition-color-change;
 }
