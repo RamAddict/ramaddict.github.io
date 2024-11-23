@@ -20,7 +20,7 @@
           </h1>
         </div>
       </div>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 hide-down-delay">
         <div class="flex flex-row">
           <p class="text-2xl leading-6">I build software for the web with</p>
           <FlipWords :words="combinations" :duration="3000" class="text-2xl leading-6" />
@@ -78,6 +78,13 @@ body {
     opacity: 1;
     transform: translateX(0%);
   }
+}
+
+.hide-down-delay {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: smooth-appear 2s ease forwards;
+  animation-delay: 5s;
 }
 
 .hide-left {
