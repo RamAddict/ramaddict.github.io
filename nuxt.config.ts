@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '@formkit/nuxt',
   ],
   tailwindcss: {
+    exposeConfig: true,
     config: {
       theme: {
         extend: {
