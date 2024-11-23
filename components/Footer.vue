@@ -4,8 +4,8 @@ function playCroak() {
 }
 const colorMode = useColorMode();
 
-function toggleColorMode() {
-  if (e.target.checked) {
+function toggleColorMode(e: Event) {
+  if ((e.target as HTMLInputElement).checked) {
     colorMode.preference = 'light';
   } else {
     colorMode.preference = 'dark';
