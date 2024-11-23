@@ -1,7 +1,7 @@
 <template>
   <main
     id="cards"
-    class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible"
+    class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible  text-justify sm:text-left"
     @mousemove="updateCssVars($event)"
   >
     <section class="flex flex-col gap-4 rounded-3xl px-8">
@@ -11,7 +11,7 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8">
       <h2 class="text-2xl">Most recent work</h2>
       <hr class="mb-4 opacity-50" />
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
         <NuxtLink
           to="/work/slick-plus"
           class="border-base-content card flex aspect-video flex-col justify-center border"
@@ -55,7 +55,7 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
       <h2 class="text-2xl">Side projects</h2>
       <hr class="mb-4 opacity-50" />
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
         <NuxtLink
           to="/work/tenacit"
           class="border-base-content card flex aspect-video flex-col justify-center border"

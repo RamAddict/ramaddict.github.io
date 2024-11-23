@@ -1,5 +1,5 @@
 <template>
-  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-12">
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-12  text-justify sm:text-left">
     <section class="m-auto flex max-w-2xl flex-col gap-4 text-xl">
       <h1 class="m-auto text-center text-4xl text-yellow-600">Contact Me</h1>
       <h1>

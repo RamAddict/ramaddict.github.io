@@ -1,15 +1,11 @@
 <template>
-  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16">
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16 text-justify sm:text-left">
     <h1 class="mb-2 mt-8 font-mono text-4xl font-bold text-yellow-600">
       <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
     </h1>
-    <div class="text-base-100 flex flex-row gap-2 leading-5">
-      <div class="text-base-100 flex flex-row gap-2 leading-5">
-        <span class="chip">NestJs</span> <span class="chip">Angular</span>
-        <span class="chip">Postgres</span> <span class="chip">AWS</span>
-        <span class="chip">Sequelize</span> <span class="chip">AWS CDK</span>
-      </div>
-    </div>
+    <SkillChips
+      :skills="['NestJs', 'Angular', 'Postgres', 'AWS', 'Sequelize', 'AWS CDK']"
+    ></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
         <span class="font-cursive text-6xl">S</span>lick Plus (Slick+) is a platform designed to
@@ -58,9 +54,7 @@
         worked like a charm. No more slow loading or unseekable videos.
       </p>
     </section>
-    <section class="animate-pulse pt-32">
-      Still being written...
-    </section>
+    <section class="animate-pulse pt-32">Still being written...</section>
   </main>
 </template>
 

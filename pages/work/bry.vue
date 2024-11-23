@@ -1,13 +1,11 @@
 <template>
-  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16">
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16  text-justify sm:text-left">
     <h1 class="mb-2 mt-8 font-mono text-4xl font-bold text-yellow-600">
       <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
     </h1>
-    <div class="flex flex-row gap-2 text-base-100 leading-5">
-      <span class="chip">Svelte</span> <span class="chip">Spring</span
-      ><span class="chip">Angular</span> <span class="chip">Wasm</span>
-      <span class="chip">Postgres</span> <span class="chip">Kubernetes</span>
-    </div>
+    <SkillChips
+      :skills="['Svelte', 'Spring', 'Angular', 'Wasm', 'Postgres', 'Kubernetes']"
+    ></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
         <span class="font-cursive text-6xl">M</span>y very first job working with web development. I
@@ -36,11 +34,7 @@
         own. Instead of reinventing the wheel, I found the old NIST project with the C code that did
         the validations we needed. I then adapted it and used emscripten to compile to web assembly,
         thus creating an open-source library called
-        <NuxtLink
-          class="link"
-          to="https://github.com/RamAddict/NBIS-JS"
-          >NBIS-JS</NuxtLink
-        >.
+        <NuxtLink class="link" to="https://github.com/RamAddict/NBIS-JS">NBIS-JS</NuxtLink>.
       </p>
       <p>
         The result was a finger capturing process that no longer required an API, simplifying the

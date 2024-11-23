@@ -1,15 +1,11 @@
 <template>
-  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16">
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16 text-justify sm:text-left">
     <h1 class="mb-2 mt-8 font-mono text-4xl font-bold text-yellow-600">
       <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
     </h1>
-    <div class="text-base-100 flex flex-row gap-2 leading-5">
-      <div class="text-base-100 flex flex-row gap-2 leading-5">
-        <span class="chip">Express</span> <span class="chip">Angular</span>
-        <span class="chip">Angular Material</span> <span class="chip">AWS</span>
-        <span class="chip">MongoDB</span> <span class="chip">Serverless</span>
-      </div>
-    </div>
+    <SkillChips
+      :skills="['Express', 'Angular', 'Angular Material', 'AWS', 'MongoDB', 'Serverless']"
+    ></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
         <span class="font-cursive text-6xl">T</span>enacit is a startup I co-founded during my time

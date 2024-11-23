@@ -1,11 +1,9 @@
 <template>
-  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16">
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 px-8 pb-16 text-justify sm:text-left">
     <h1 class="mb-2 mt-8 font-mono text-4xl font-bold text-yellow-600">
       <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
     </h1>
-    <div class="text-base-100 flex flex-row gap-2 leading-5">
-      <span class="chip">C++</span> <span class="chip">CMake</span><span class="chip">Linux</span>
-    </div>
+    <SkillChips :skills="['C++', 'CMake', 'Linux']"></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
         <span class="font-cursive text-6xl">E</span>CL is a scientific research laboratory I joined

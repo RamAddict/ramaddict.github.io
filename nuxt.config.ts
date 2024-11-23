@@ -3,7 +3,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-
+  components: [{ pathPrefix: false, path: '~/components' }],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
-    '@formkit/nuxt'
+    '@formkit/nuxt',
   ],
   tailwindcss: {
     config: {
