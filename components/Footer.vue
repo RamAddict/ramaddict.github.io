@@ -8,7 +8,7 @@ function playCroak() {
 <template>
   <!-- TODO: fix pages with scroll not showing particles on the bottom -->
   <ParticlesBg
-    class="absolute inset-0 -z-10"
+    class="absolute inset-0 -z-10 !h-full !overflow-visible" 
     :quantity="100"
     :ease="100"
     :color="colorMode.value === 'dark' ? '#FFF' : colorMode.value === 'sepia' ? '#433422' : '#000'"

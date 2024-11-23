@@ -40,6 +40,7 @@ const canvasRef = ref<HTMLCanvasElement | null>(null);
 const canvasContainerRef = ref<HTMLDivElement | null>(null);
 const context = ref<CanvasRenderingContext2D | null>(null);
 const circles = ref<Circle[]>([]);
+const scrollHeight = ref(document?.body?.scrollHeight || 0);
 const mouse = reactive<{ x: number; y: number }>({ x: 0, y: 0 });
 const canvasSize = reactive<{ w: number; h: number }>({ w: 0, h: 0 });
 const { x: mouseX, y: mouseY } = useMouse();
@@ -74,7 +75,19 @@ onMounted(() => {
 
   initCanvas();
   animate();
-  window.addEventListener('resize', initCanvas);
+  window.addEventListener('resize', (e) => {
+    if (e.isTrusted) {
+      initCanvas();
+    }
+  });
+
+  setInterval(() => {
+    scrollHeight.value = document?.body?.scrollHeight;
+  }, 20);
+
+  watch(scrollHeight, (newValue) => {
+    initCanvas();
+  });
 });
 
 onBeforeUnmount(() => {
@@ -96,12 +109,12 @@ function onMouseMove() {
     const { w, h } = canvasSize;
     const x = mouseX.value - rect.left - w / 2;
     const y = mouseY.value - rect.top - h / 2;
-
-    const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
-    if (inside) {
-      mouse.x = x;
-      mouse.y = y;
-    }
+    // console.log(x, y);
+    // const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+    // if (inside) {
+    mouse.x = x;
+    mouse.y = y;
+    // }
   }
 }
 
@@ -109,7 +122,7 @@ function resizeCanvas() {
   if (canvasContainerRef.value && canvasRef.value && context.value) {
     circles.value.length = 0;
     canvasSize.w = canvasContainerRef.value.offsetWidth;
-    canvasSize.h = canvasContainerRef.value.offsetHeight;
+    canvasSize.h = Math.max(scrollHeight.value, canvasContainerRef.value.offsetHeight);
     canvasRef.value.width = canvasSize.w * pixelRatio.value;
     canvasRef.value.height = canvasSize.h * pixelRatio.value;
     canvasRef.value.style.width = canvasSize.w + 'px';
