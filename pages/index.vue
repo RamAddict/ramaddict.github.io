@@ -5,13 +5,13 @@
         <NuxtImg
           preload
           src="me.jpg"
-          class="hide-left h-32 w-32 rounded-full grayscale sm:h-auto scale-[4]"
+          class="hide-left h-32 w-32 scale-[4] rounded-full grayscale sm:h-auto"
           width="200"
           height="200"
           fit="cover"
           placeholder
           format="webp"
-          alt="Arthur Bianco" 
+          alt="Arthur Bianco"
         />
         <div class="my-auto flex flex-col gap-2">
           <h2 class="hide-right text-4xl">Hi, my name is Arthur.</h2>
@@ -21,24 +21,10 @@
         </div>
       </div>
       <div class="flex flex-col gap-2">
-        <p class="text-2xl leading-4">
-          I build software for the web with
-          <span class="inline-block w-20 border-b-4 border-b-[#41b883]">{{ front }}</span
-          >, <span class="inline-block w-20 border-b-4 border-b-[#ea2868]">{{ back }}</span
-          >, and <span class="inline-block border-b-4 border-b-[#ff9900]">AWS</span>.
-          <!-- <select class="border-b-4 border-b-[#41b883] transition-opacity" id="">
-            <option class="transition-opacity">Nuxt</option>
-            <option class="transition-opacity">Angular</option></select
-          >,
-          <select class="border-b-4 border-b-[#ea2868]" name="" id="">
-            <option class="">Nestjs</option>
-            <option class="">Express</option>
-            <option class="">Spring</option></select
-          >, and
-          <select class="border-b-4 border-b-[#ff9900]" name="" id="">
-            <option class="z-10 border-b-4 border-b-[#009900]">AWS</option>
-          </select> -->
-        </p>
+        <div class="flex flex-row">
+          <p class="text-2xl leading-6">I build software for the web with</p>
+          <FlipWords :words="combinations" :duration="3000" class="text-2xl leading-6" />
+        </div>
         <p class="text-2xl">
           I'm currently working with an Irish startup on a product called
           <a href="https://www.slick.plus" target="_blank" class="hover:underline">Slick+</a>.
@@ -68,15 +54,12 @@
 <script setup lang="ts">
 const frontValues = ['Nuxt', 'Angular', 'Nextjs', 'Svelte'];
 const backValues = ['Express', 'Spring', 'Nestjs'];
-const front = ref<string>(frontValues[0]);
-const back = ref<string>(backValues[0]);
-
-onMounted(() => {
-  setInterval(() => {
-    front.value = frontValues[Math.floor(Math.random() * frontValues.length)];
-    back.value = backValues[Math.floor(Math.random() * backValues.length)];
-  }, 1000);
-});
+const infras = ['AWS'];
+const combinations = frontValues
+  .flatMap((f) => backValues.flatMap((b) => infras.map((i) => `${f}, ${b}, and ${i}.`)))
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
 </script>
 
 <style lang="css">
