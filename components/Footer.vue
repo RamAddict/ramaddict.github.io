@@ -6,6 +6,15 @@ function playCroak() {
 </script>
 
 <template>
+  <!-- TODO: fix pages with scroll not showing particles on the bottom -->
+  <ParticlesBg
+    class="absolute inset-0 -z-10"
+    :quantity="100"
+    :ease="100"
+    :color="colorMode.value === 'dark' ? '#FFF' : colorMode.value === 'sepia' ? '#433422' : '#000'"
+    :staticity="10"
+    refresh
+  />
   <div class="mx-auto max-w-5xl">
     <hr class="mx-8 opacity-50" />
     <footer class="m-auto flex max-w-5xl flex-row justify-between px-8 py-6">
