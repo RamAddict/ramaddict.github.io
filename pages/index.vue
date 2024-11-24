@@ -5,7 +5,7 @@
         <NuxtImg
           preload
           src="me.jpg"
-          class="hide-left h-32 w-32 scale-[4] rounded-full grayscale sm:h-auto"
+          class="hide-left h-32 w-32 scale-[4] rounded-full grayscale sm:h-auto m-auto sm:m-0"
           width="200"
           height="200"
           fit="cover"
