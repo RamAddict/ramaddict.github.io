@@ -3,6 +3,14 @@ function playCroak() {
   new Audio('Frog-sound-ribbit.mp3').play();
 }
 const colorMode = useColorMode();
+const checkbox = defineModel();
+onMounted(() => {
+  if (colorMode.value === 'dark') {
+    checkbox.value = false;
+  } else {
+    checkbox.value = true;
+  }
+});
 
 function toggleColorMode(e: Event) {
   if ((e.target as HTMLInputElement).checked) {
@@ -11,7 +19,6 @@ function toggleColorMode(e: Event) {
     colorMode.preference = 'dark';
   }
 }
-
 </script>
 
 <template>
@@ -27,7 +34,8 @@ function toggleColorMode(e: Event) {
   <div class="mx-auto max-w-5xl">
     <hr class="mx-8 opacity-50" />
     <footer
-      class="m-auto flex max-w-5xl flex-row justify-between px-8 py-6 text-sm sm:justify-between sm:text-base mx-2"
+      class="m-auto mx-2 flex max-w-5xl flex-row justify-between px-8 py-6 text-sm sm:justify-between
+        sm:text-base"
     >
       <span class="my-auto"> © {{ new Date().getFullYear() }} Arthur Bianco.</span>
       <span class="hidden sm:block"
@@ -35,7 +43,13 @@ function toggleColorMode(e: Event) {
       >
       <label class="swap swap-rotate h-4 scale-150 sm:scale-[2]">
         <!-- this hidden checkbox controls the state -->
-        <input @change="toggleColorMode" :checked="colorMode.value === 'light'" type="checkbox" class="border-none bg-inherit" />
+        <input
+          @change="toggleColorMode"
+          v-model="checkbox"
+          :checked="colorMode.value === 'light'"
+          type="checkbox"
+          class="border-none bg-inherit"
+        />
 
         <!-- sun icon -->
         <svg
