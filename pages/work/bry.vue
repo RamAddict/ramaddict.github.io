@@ -8,9 +8,8 @@
     ></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
-        <span class="font-cursive text-6xl">M</span>y very first job working with web development. I
-        joined as a junior software developer in 2022 a few months after graduating from college.
-        The only knowledge of web development I had then were some uni projects and, most
+        <span class="font-cursive text-6xl">I</span> joined as a junior software developer in 2022 a few months after graduating from college.
+        The only knowledge of web development I had then were some (arguably big) uni projects and, most
         importantly, my course conclusion thesis.
       </p>
       <p>
@@ -64,7 +63,7 @@
         enough part of the whole system that it deserved its own module. Having spent the most time
         working with biometrics, I was tasked with planning and building a web component that
         encapsulated the collection process. We agreed upon creating a web component that would very
-        customizable to be able to be used in an array of products the company had.
+        customizable so it could be used in an array of company products.
       </p>
       <NuxtImg
         class="m-auto py-4"
