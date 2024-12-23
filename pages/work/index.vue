@@ -69,17 +69,6 @@
             </div>
           </div>
         </NuxtLink>
-        <NuxtLink class="border-base-content card flex aspect-video flex-col justify-center border">
-          <div class="card-content">
-            <NuxtImg width="120" src="/work/npmjs.svg" alt="bry logo" class="m-auto"> </NuxtImg>
-          </div>
-        </NuxtLink>
-        <NuxtLink class="border-base-content card flex aspect-video flex-col justify-center border">
-          <div class="card-content">
-            <NuxtImg width="120" src="/work/knight_fl_warrior.svg" alt="bry logo" class="m-auto">
-            </NuxtImg>
-          </div>
-        </NuxtLink>
       </div>
     </section>
   </main>
