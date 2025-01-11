@@ -8,7 +8,7 @@
       <p>
         <span class="font-cursive text-6xl">E</span>CL is a scientific research laboratory I joined
         in late 2018, as a research assistant. Contrary to what its name might suggest, Its purpose
-        is to study video processing techniques, VLSI circuit algorithms design and EDA.
+        is to study video processing techniques, VLSI circuit algorithms design, and EDA.
       </p>
       <p class="">
         During my time there I was involved in the development of
@@ -21,16 +21,16 @@
         <NuxtLink
           class="link"
           to="https://media.licdn.com/dms/document/media/C4E2DAQGHqQrRjboe8g/profile-treasury-document-pdf-analyzed/0/1613531249242?e=1732147200&v=beta&t=LuFH19Q8oS7iPogfPvVlwFH-JYv80NxBq3w7g9cApcU"
-          >the effects of global routing</NuxtLink
+          > The effects of global routing</NuxtLink
         >.
       </p>
       <p>
         While this experience had nothing to do with web development, it primarily served as a first
         working experience with other people in the context of research in Brazil. Sharing a
-        workplace, interacting with soon to be doctors and masters, learning to think and work
+        workplace, interacting with soon-to-be doctors and masters, learning to think and work
         scientifically, reading lots of articles, participating in congresses, and writing but
         mostly reviewing papers were just a few of the things I learned. I am thankful to my
-        professor for inviting me to team and for those years that taught me so much.
+        professor for inviting me to the team and for those years that taught me so much.
       </p>
     </section>
   </main>
