@@ -38,9 +38,6 @@ function toggleColorMode(e: Event) {
         sm:text-base"
     >
       <span class="my-auto"> © {{ new Date().getFullYear() }} Arthur Bianco.</span>
-      <span class="hidden sm:block"
-        >Made with <u>Nuxt</u>. <span class="cursor-pointer" @click="playCroak">🐸</span></span
-      >
       <label class="swap swap-rotate h-4 scale-150 sm:scale-[2]">
         <!-- this hidden checkbox controls the state -->
         <input
