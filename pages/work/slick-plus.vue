@@ -28,7 +28,7 @@
     </section>
     <section class="flex flex-col gap-4 text-xl">
       <h2 class="text-3xl font-medium">Challenges</h2>
-      <h3 class="text-2xl">Slow loading videos</h3>
+      <h3 class="text-2xl">Issues with streaming videos recorded in chrome</h3>
       <p>
         Being a sort of streaming platform brought new challenges related to video processing I had
         to tackle. Firstly, videos that were recorded in the browser were not seekable in Chrome.
