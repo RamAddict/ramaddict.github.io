@@ -20,7 +20,7 @@
           </h1>
         </div>
       </div>
-      <div class="flex flex-col gap-2">
+      <div class="hide-down-delay flex flex-col gap-2">
         <div class="flex flex-col sm:flex-row">
           <p class="content-center pb-1 text-2xl leading-6 sm:pb-0">
             I build software for the web with&nbsp;
