@@ -1,4 +1,8 @@
-export const useScrambler = (finalTitle: string, speed = 33, letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') => {
+export const useScrambler = (
+  finalTitle: string,
+  speed = 33,
+  letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+) => {
   let title = ref(finalTitle);
   let isScrambling = ref(false);
 

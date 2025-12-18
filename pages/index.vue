@@ -21,65 +21,86 @@
         </div>
       </div>
       <div class="flex flex-col gap-2">
-        <div class="flex flex-row">
-          <p class="content-center text-2xl leading-6">I build software for the web with&nbsp;</p>
+        <div class="flex flex-col sm:flex-row">
+          <p class="content-center pb-1 text-2xl leading-6 sm:pb-0">
+            I build software for the web with&nbsp;
+          </p>
           <!-- <FlipWords :words="combinations" :duration="3000" class="text-2xl leading-6" /> -->
-          <RotatingText
-            :texts="frontValues"
-            :initial-delay="1500"
-            mainClassName=""
-            :staggerFrom="'last'"
-            :initial="{ y: '100%' }"
-            :animate="{ y: 0 }"
-            :exit="{ y: '-120%' }"
-            :staggerDuration="0.125"
-            splitLevelClassName="overflow-hidden text-2xl leading-6"
-            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
-            :rotationInterval="3500"
-          />,&nbsp;
-          <RotatingText
-            :texts="backValues"
-            :initial-delay="0"
-            mainClassName=""
-            :staggerFrom="'last'"
-            :initial="{ y: '100%' }"
-            :animate="{ y: 0 }"
-            :exit="{ y: '-120%' }"
-            :staggerDuration="0.125"
-            splitLevelClassName="overflow-hidden text-2xl leading-6"
-            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
-            :rotationInterval="3500"
-          />,&nbsp;
-          <RotatingText
-            :initial-delay="3000"
-            :texts="infras"
-            mainClassName=""
-            :staggerFrom="'last'"
-            :initial="{ y: '100%' }"
-            :animate="{ y: 0 }"
-            :exit="{ y: '-120%' }"
-            :staggerDuration="0.125"
-            splitLevelClassName="overflow-hidden text-2xl leading-6"
-            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
-            :rotationInterval="3500"
-          />.
+          <div class="flex">
+            <RotatingText
+              :texts="frontValues"
+              :initial-delay="2400"
+              mainClassName=""
+              :staggerFrom="'last'"
+              :initial="{ y: '100%' }"
+              :animate="{ y: 0 }"
+              :exit="{ y: '-120%' }"
+              :staggerDuration="0.125"
+              splitLevelClassName="overflow-hidden text-2xl leading-6"
+              :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+              :rotationInterval="4000"
+            />,&nbsp;
+            <RotatingText
+              :texts="backValues"
+              :initial-delay="0"
+              mainClassName=""
+              :staggerFrom="'last'"
+              :initial="{ y: '100%' }"
+              :animate="{ y: 0 }"
+              :exit="{ y: '-120%' }"
+              :staggerDuration="0.125"
+              splitLevelClassName="overflow-hidden text-2xl leading-6"
+              :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+              :rotationInterval="4000"
+            />,&nbsp;
+            <RotatingText
+              :initial-delay="1200"
+              :texts="infras"
+              mainClassName=""
+              :staggerFrom="'last'"
+              :initial="{ y: '100%' }"
+              :animate="{ y: 0 }"
+              :exit="{ y: '-120%' }"
+              :staggerDuration="0.125"
+              splitLevelClassName="overflow-hidden text-2xl leading-6"
+              :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+              :rotationInterval="4000"
+            />.
+          </div>
         </div>
         <p class="text-2xl">
           I'm currently working with an Irish startup on a product called
           <a href="https://www.slick.plus" target="_blank" class="hover:underline">Slick+</a>.
         </p>
-        <p class="text-2xl">
+        <p class="pt-20 text-2xl sm:pt-60">
           Find me on
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/arthurbianco/"
-            class="hover:underline"
-            >Linkedin</a
+
+          <a target="_blank" href="https://www.linkedin.com/in/arthurbianco/" class="">
+            <GradientText
+              text="Linkedin"
+              :colors="['#0b66c2', '#ffffff', '#0b66c2', '#ffffff', '#0b66c2']"
+              :animation-speed="10"
+              :show-border="false"
+              class="!inline"
+            /> </a
           >,
-          <a target="_blank" href="https://github.com/RamAddict" class="hover:underline">GitHub</a>
-          and
-          <a target="_blank" href="https://www.instagram.com/apbiancoo/" class="hover:underline"
-            >Instagram</a
+          <a target="_blank" href="https://github.com/RamAddict" class="hover:underline">
+            <GradientText
+              text="GitHub"
+              :colors="['#0000', '#ffffff', '#0000', '#ffffff', '#0000']"
+              :animation-speed="20"
+              :show-border="false"
+              class="!inline"
+            /> </a
+          >,
+          <a target="_blank" href="https://www.instagram.com/apbiancoo/" class="hover:underline">
+            <GradientText
+              text="Instagram"
+              :colors="['#feda75', '#fa7e1e', '#C13584', '#833AB4', '#405DE6']"
+              :animation-speed="10"
+              :show-border="false"
+              class="!inline"
+            /> </a
           >.
         </p>
       </div>
@@ -91,16 +112,9 @@
 </template>
 
 <script setup lang="ts">
-import { rand } from '@vueuse/core';
-
 const frontValues = ['Nuxt', 'Angular', 'Nextjs', 'Svelte'];
 const backValues = ['Express', 'Spring', 'Nestjs'];
 const infras = ['AWS', 'Firebase', 'Supabase'];
-const combinations = frontValues
-  .flatMap((f) => backValues.flatMap((b) => infras.map((i) => `${f}, ${b}, and ${i}.`)))
-  .map((value) => ({ value, sort: Math.random() }))
-  .sort((a, b) => a.sort - b.sort)
-  .map(({ value }) => value);
 </script>
 
 <style lang="css">

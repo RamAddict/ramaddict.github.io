@@ -1,7 +1,7 @@
 <template>
   <main
     id="cards"
-    class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible  text-justify sm:text-left"
+    class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible text-justify sm:text-left"
     @mousemove="updateCssVars($event)"
   >
     <section class="flex flex-col gap-4 rounded-3xl px-8">
@@ -11,13 +11,18 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8">
       <h2 class="text-2xl">Most recent work</h2>
       <hr class="mb-4 opacity-50" />
-      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <NuxtLink
           to="/work/slick-plus"
-          class="border-base-content card flex aspect-video flex-col justify-center border"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
-            <NuxtImg width="160" src="/work/slick-plus-logo.svg" alt="bry logo" class="m-auto">
+            <NuxtImg
+              width="160"
+              src="/work/slick-plus-logo.svg"
+              alt="slick plus logo"
+              class="m-auto"
+            >
             </NuxtImg>
             <div class="absolute bottom-0">
               <p>Slick Plus</p>
@@ -26,8 +31,22 @@
           </div>
         </NuxtLink>
         <NuxtLink
+          to="/work/reps-co"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
+        >
+          <div class="card-content">
+            <h3 class="m-auto text-center text-3xl font-bold tracking-tighter text-white">
+              Reps&Co
+            </h3>
+            <div class="absolute bottom-0">
+              <p>Reps&Co</p>
+              <p class="text-xs">Apr 2025 - Nov 2025</p>
+            </div>
+          </div>
+        </NuxtLink>
+        <NuxtLink
           to="/work/bry"
-          class="border-base-content card flex aspect-video flex-col justify-center border"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
             <NuxtImg width="120" src="/work/bry-logo-blue.webp" alt="bry logo" class="m-auto">
@@ -40,7 +59,7 @@
         </NuxtLink>
         <NuxtLink
           to="/work/ecl"
-          class="border-base-content card flex aspect-video flex-col justify-center border"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
             <NuxtImg width="120" src="/work/ecl-logo.png" alt="bry logo" class="m-auto"> </NuxtImg>
@@ -55,10 +74,10 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
       <h2 class="text-2xl">Side projects</h2>
       <hr class="mb-4 opacity-50" />
-      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <NuxtLink
           to="/work/tenacit"
-          class="border-base-content card flex aspect-video flex-col justify-center border"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
             <NuxtImg width="160" src="/work/tenacit_logo.png" alt="bry logo" class="m-auto">
@@ -66,6 +85,19 @@
             <div class="absolute bottom-0">
               <p>Tenacit</p>
               <p class="text-xs">Dec 2022 - Mar 2024</p>
+            </div>
+          </div>
+        </NuxtLink>
+        <NuxtLink
+          to="/work/nbisjs"
+          class="card flex aspect-video flex-col justify-center border border-base-content"
+        >
+          <div class="card-content">
+            <NuxtImg width="120" src="/work/npmjs.svg" alt="nbisjs logo" class="m-auto invert">
+            </NuxtImg>
+            <div class="absolute bottom-0">
+              <p>NBISJS</p>
+              <p class="text-xs">Jun 2023</p>
             </div>
           </div>
         </NuxtLink>
