@@ -41,8 +41,8 @@
       <p>
         Working closely with a talented team of 5-10 engineers, I found the environment both
         challenging and incredibly rewarding. The fast-paced nature of the ticketing industry
-        provided the perfect backdrop for exploring the latest Svelte features (like Runes in Svelte
-        5) and building scalable, user-centric software.
+        provided the perfect backdrop for exploring the latest Svelte features and building
+        scalable, user-centric software.
       </p>
     </section>
   </main>
