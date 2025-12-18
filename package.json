@@ -19,6 +19,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
+    "motion-v": "^1.5.0",
     "nuxt": "^3.12.4",
     "prettier-plugin-classnames": "^0.7.3",
     "prettier-plugin-merge": "^0.7.1",

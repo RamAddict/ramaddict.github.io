@@ -5,7 +5,7 @@
         <NuxtImg
           preload
           src="me.jpg"
-          class="hide-left h-32 w-32 scale-[4] rounded-full grayscale sm:h-auto m-auto sm:m-0"
+          class="hide-left m-auto h-32 w-32 scale-[4] rounded-full grayscale sm:m-0 sm:h-auto"
           width="200"
           height="200"
           fit="cover"
@@ -20,10 +20,49 @@
           </h1>
         </div>
       </div>
-      <div class="flex flex-col gap-2 hide-down-delay">
+      <div class="flex flex-col gap-2">
         <div class="flex flex-row">
-          <p class="text-2xl leading-6">I build software for the web with</p>
-          <FlipWords :words="combinations" :duration="3000" class="text-2xl leading-6" />
+          <p class="content-center text-2xl leading-6">I build software for the web with&nbsp;</p>
+          <!-- <FlipWords :words="combinations" :duration="3000" class="text-2xl leading-6" /> -->
+          <RotatingText
+            :texts="frontValues"
+            :initial-delay="1500"
+            mainClassName=""
+            :staggerFrom="'last'"
+            :initial="{ y: '100%' }"
+            :animate="{ y: 0 }"
+            :exit="{ y: '-120%' }"
+            :staggerDuration="0.125"
+            splitLevelClassName="overflow-hidden text-2xl leading-6"
+            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+            :rotationInterval="3500"
+          />,&nbsp;
+          <RotatingText
+            :texts="backValues"
+            :initial-delay="0"
+            mainClassName=""
+            :staggerFrom="'last'"
+            :initial="{ y: '100%' }"
+            :animate="{ y: 0 }"
+            :exit="{ y: '-120%' }"
+            :staggerDuration="0.125"
+            splitLevelClassName="overflow-hidden text-2xl leading-6"
+            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+            :rotationInterval="3500"
+          />,&nbsp;
+          <RotatingText
+            :initial-delay="3000"
+            :texts="infras"
+            mainClassName=""
+            :staggerFrom="'last'"
+            :initial="{ y: '100%' }"
+            :animate="{ y: 0 }"
+            :exit="{ y: '-120%' }"
+            :staggerDuration="0.125"
+            splitLevelClassName="overflow-hidden text-2xl leading-6"
+            :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
+            :rotationInterval="3500"
+          />.
         </div>
         <p class="text-2xl">
           I'm currently working with an Irish startup on a product called
@@ -52,9 +91,11 @@
 </template>
 
 <script setup lang="ts">
+import { rand } from '@vueuse/core';
+
 const frontValues = ['Nuxt', 'Angular', 'Nextjs', 'Svelte'];
 const backValues = ['Express', 'Spring', 'Nestjs'];
-const infras = ['AWS'];
+const infras = ['AWS', 'Firebase', 'Supabase'];
 const combinations = frontValues
   .flatMap((f) => backValues.flatMap((b) => infras.map((i) => `${f}, ${b}, and ${i}.`)))
   .map((value) => ({ value, sort: Math.random() }))
