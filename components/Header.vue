@@ -27,12 +27,12 @@
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
             >Work</NuxtLink
           >
-          <!-- <NuxtLink
-            :class="{ 'text-yellow-600': route.path === '/work' }"
-            to="/work"
+          <NuxtLink
+            :class="{ 'text-yellow-600': route.path === '/playground' }"
+            to="/playground"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
-            >Side Projects</NuxtLink
-          > -->
+            >Playground</NuxtLink
+          >
           <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/contact' }"
             to="/contact"

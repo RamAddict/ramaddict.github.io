@@ -35,9 +35,7 @@
           class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
-            <h3 class="m-auto text-center text-3xl font-bold tracking-tighter text-white">
-              Reps&Co
-            </h3>
+            <h3 class="m-auto text-center text-3xl font-bold tracking-tighter">Reps&Co</h3>
             <div class="absolute bottom-0">
               <p>Reps&Co</p>
               <p class="text-xs">Apr 2025 - Nov 2025</p>
@@ -62,7 +60,7 @@
           class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
-            <NuxtImg width="120" src="/work/ecl-logo.png" alt="bry logo" class="m-auto"> </NuxtImg>
+            <NuxtImg width="120" src="/work/ecl-logo.png" alt="ecl logo" class="m-auto"> </NuxtImg>
             <div class="absolute bottom-0">
               <p>Embedded Computing Laboratory</p>
               <p class="text-xs">Aug 2018 - Jul 2020</p>
@@ -80,7 +78,7 @@
           class="card flex aspect-video flex-col justify-center border border-base-content"
         >
           <div class="card-content">
-            <NuxtImg width="160" src="/work/tenacit_logo.png" alt="bry logo" class="m-auto">
+            <NuxtImg width="160" src="/work/tenacit_logo.png" alt="tenacit logo" class="m-auto">
             </NuxtImg>
             <div class="absolute bottom-0">
               <p>Tenacit</p>
@@ -175,7 +173,7 @@ function updateCssVars(e: MouseEvent) {
   );
   z-index: 3;
 }
-#cards:hover > .card::after {
+#cards:hover > section > div > .card::after {
   opacity: 1;
 }
 .card:hover::after {
