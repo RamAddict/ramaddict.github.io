@@ -87,7 +87,7 @@
           <a target="_blank" href="https://github.com/RamAddict" class="hover:underline">
             <GradientText
               text="GitHub"
-              :colors="['#0000', '#ffffff', '#0000', '#ffffff', '#0000']"
+              :colors="['#000000', '#ffffff', '#000000', '#ffffff', '#000000']"
               :animation-speed="20"
               :show-border="false"
               class="!inline"

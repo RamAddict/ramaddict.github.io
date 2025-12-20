@@ -27,6 +27,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@webgpu/types": "^0.1.68",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.14",
     "postcss": "^8.4.47",

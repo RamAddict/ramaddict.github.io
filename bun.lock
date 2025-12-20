@@ -20,6 +20,7 @@
         "vue": "latest",
       },
       "devDependencies": {
+        "@webgpu/types": "^0.1.68",
         "autoprefixer": "^10.4.20",
         "daisyui": "^4.12.14",
         "postcss": "^8.4.47",
@@ -456,6 +457,8 @@
     "@vueuse/nuxt": ["@vueuse/nuxt@11.2.0", "", { "dependencies": { "@nuxt/kit": "^3.13.2", "@vueuse/core": "11.2.0", "@vueuse/metadata": "11.2.0", "local-pkg": "^0.5.0", "vue-demi": ">=0.14.10" }, "peerDependencies": { "nuxt": "^3.0.0" } }, "sha512-4Mp1SXpXy8KRKY7lJqN4AuiMkun9IUVGt02t2SBk1hf/RVe4U6AIR2ukmHws0uYvjIGIhlGNv4o6ayTK/7ELWQ=="],
 
     "@vueuse/shared": ["@vueuse/shared@11.2.0", "", { "dependencies": { "vue-demi": ">=0.14.10" } }, "sha512-VxFjie0EanOudYSgMErxXfq6fo8vhr5ICI+BuE3I9FnX7ePllEsVrRQ7O6Q1TLgApeLuPKcHQxAXpP+KnlrJsg=="],
+
+    "@webgpu/types": ["@webgpu/types@0.1.68", "", {}, "sha512-3ab1B59Ojb6RwjOspYLsTpCzbNB3ZaamIAxBMmvnNkiDoLTZUOBXZ9p5nAYVEkQlDdf6qAZWi1pqj9+ypiqznA=="],
 
     "abbrev": ["abbrev@1.1.1", "", {}, "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="],
 
