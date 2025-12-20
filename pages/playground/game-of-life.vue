@@ -3,7 +3,7 @@
     <canvas
       v-if="navigatorWebGpu"
       ref="canvas"
-      width="1024"
+      width="576"
       height="576"
       class="m-4 mx-auto p-2 shadow-md"
     ></canvas>
@@ -30,6 +30,7 @@ import shader from '~/public/playground/shader.wgsl?raw';
 const canvas = ref<HTMLCanvasElement | null>(null);
 const navigatorWebGpu = ref<GPU | null>(null);
 const isChecking = ref(true);
+const GRID_SIZE = 32;
 
 onMounted(async () => {
   // Check for WebGPU support on client-side only
@@ -48,6 +49,15 @@ onMounted(async () => {
 
   const canvasFormat = navigatorWebGpu.value.getPreferredCanvasFormat();
   ctx.configure({ device, format: canvasFormat });
+
+  // Create a uniform buffer that describes the grid.
+  const uniformArray = new Float32Array([GRID_SIZE, GRID_SIZE]);
+  const uniformBuffer = device.createBuffer({
+    label: 'Grid Uniforms',
+    size: uniformArray.byteLength,
+    usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+  });
+  device.queue.writeBuffer(uniformBuffer, 0, uniformArray);
 
   const encoder = device.createCommandEncoder();
 
@@ -106,12 +116,23 @@ onMounted(async () => {
     },
   });
 
+  const bindGroup = device.createBindGroup({
+    label: 'Cell renderer bind group',
+    layout: cellPipeline.getBindGroupLayout(0),
+    entries: [
+      {
+        binding: 0,
+        resource: { buffer: uniformBuffer },
+      },
+    ],
+  });
+
   const pass = encoder.beginRenderPass({
     colorAttachments: [
       {
         view: ctx.getCurrentTexture().createView(),
         loadOp: 'clear',
-        clearValue: { r: 0.2, g: 0.5, b: 0.7, a: 1 },
+        clearValue: { r: 0.2, g: 0.2, b: 0.2, a: 1 },
         storeOp: 'store',
       },
     ],
@@ -119,7 +140,8 @@ onMounted(async () => {
 
   pass.setPipeline(cellPipeline);
   pass.setVertexBuffer(0, vertexBuffer);
-  pass.draw(vertices.length / 2);
+  pass.setBindGroup(0, bindGroup);
+  pass.draw(vertices.length / 2, GRID_SIZE * GRID_SIZE);
 
   pass.end();
   device.queue.submit([encoder.finish()]);
