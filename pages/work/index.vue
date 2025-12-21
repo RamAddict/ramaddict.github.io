@@ -1,9 +1,5 @@
 <template>
-  <main
-    id="cards"
-    class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible text-justify sm:text-left"
-    @mousemove="updateCssVars($event)"
-  >
+  <main class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible text-justify sm:text-left">
     <section class="flex flex-col gap-4 rounded-3xl px-8">
       <h1 class="text-4xl">Work</h1>
       <p class="text-2xl">Thing's I've made or learned at the companies I have worked for.</p>
@@ -12,60 +8,57 @@
       <h2 class="text-2xl">Most recent work</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <NuxtLink
-          to="/work/slick-plus"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <NuxtImg
-              width="160"
-              src="/work/slick-plus-logo.svg"
-              alt="slick plus logo"
-              class="m-auto"
-            >
-            </NuxtImg>
-            <div class="absolute bottom-0">
-              <p>Slick Plus</p>
-              <p class="text-xs">Mar 2024 - Present</p>
+        <NuxtLink to="/work/slick-plus">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <NuxtImg
+                width="160"
+                src="/work/slick-plus-logo.svg"
+                alt="slick plus logo"
+                class="m-auto"
+              />
+              <div class="absolute bottom-0">
+                <p>Slick Plus</p>
+                <p class="text-xs">Mar 2024 - Present</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
-        <NuxtLink
-          to="/work/reps-co"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <h3 class="m-auto text-center text-3xl font-bold tracking-tighter">Reps&Co</h3>
-            <div class="absolute bottom-0">
-              <p>Reps&Co</p>
-              <p class="text-xs">Apr 2025 - Nov 2025</p>
+
+        <NuxtLink to="/work/reps-co">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <h3 class="m-auto text-center text-3xl font-bold tracking-tighter">Reps&Co</h3>
+              <div class="absolute bottom-0">
+                <p>Reps&Co</p>
+                <p class="text-xs">Apr 2025 - Nov 2025</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
-        <NuxtLink
-          to="/work/bry"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <NuxtImg width="120" src="/work/bry-logo-blue.webp" alt="bry logo" class="m-auto">
-            </NuxtImg>
-            <div class="absolute bottom-0">
-              <p>Bry Tecnologia</p>
-              <p class="text-xs">Mar 2022 - Mar 2024</p>
+
+        <NuxtLink to="/work/bry">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <NuxtImg width="120" src="/work/bry-logo-blue.webp" alt="bry logo" class="m-auto" />
+              <div class="absolute bottom-0">
+                <p>Bry Tecnologia</p>
+                <p class="text-xs">Mar 2022 - Mar 2024</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
-        <NuxtLink
-          to="/work/ecl"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <NuxtImg width="120" src="/work/ecl-logo.png" alt="ecl logo" class="m-auto"> </NuxtImg>
-            <div class="absolute bottom-0">
-              <p>Embedded Computing Laboratory</p>
-              <p class="text-xs">Aug 2018 - Jul 2020</p>
+
+        <NuxtLink to="/work/ecl">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <NuxtImg width="120" src="/work/ecl-logo.png" alt="ecl logo" class="m-auto" />
+              <div class="absolute bottom-0">
+                <p>Embedded Computing Laboratory</p>
+                <p class="text-xs">Aug 2018 - Jul 2020</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
       </div>
     </section>
@@ -73,115 +66,45 @@
       <h2 class="text-2xl">Side projects</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <NuxtLink
-          to="/work/tenacit"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <NuxtImg width="160" src="/work/tenacit_logo.png" alt="tenacit logo" class="m-auto">
-            </NuxtImg>
-            <div class="absolute bottom-0">
-              <p>Tenacit</p>
-              <p class="text-xs">Dec 2022 - Mar 2024</p>
+        <NuxtLink to="/work/tenacit">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <NuxtImg width="160" src="/work/tenacit_logo.png" alt="tenacit logo" class="m-auto" />
+              <div class="absolute bottom-0">
+                <p>Tenacit</p>
+                <p class="text-xs">Dec 2022 - Mar 2024</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
-        <NuxtLink
-          to="/work/nbisjs"
-          class="card flex aspect-video flex-col justify-center border border-base-content"
-        >
-          <div class="card-content">
-            <NuxtImg width="120" src="/work/npmjs.svg" alt="nbisjs logo" class="m-auto invert">
-            </NuxtImg>
-            <div class="absolute bottom-0">
-              <p>NBISJS</p>
-              <p class="text-xs">Jun 2023</p>
+
+        <NuxtLink to="/work/nbisjs">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <NuxtImg width="120" src="/work/npmjs.svg" alt="nbisjs logo" class="m-auto invert" />
+              <div class="absolute bottom-0">
+                <p>NBISJS</p>
+                <p class="text-xs">Jun 2023</p>
+              </div>
             </div>
-          </div>
+          </SpotlightCard>
         </NuxtLink>
       </div>
     </section>
   </main>
 </template>
 
-<script setup lang="ts">
-function updateCssVars(e: MouseEvent) {
-  for (const card of document.getElementsByClassName('card')) {
-    const element = card as HTMLElement;
-    const rect = element.getBoundingClientRect(),
-      x = e.clientX - rect.left,
-      y = e.clientY - rect.top;
-    element.style.setProperty('--mouse-x', `${x}px`);
-    element.style.setProperty('--mouse-y', `${y}px`);
-  }
-}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="css">
 .card {
   background-color: rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.4),
-    transparent 40%
-  );
-  border-radius: inherit;
-  content: '';
-  height: 100%;
-  left: 0px;
-  opacity: 0;
-  position: absolute;
-  top: 0px;
-  transition: opacity 500ms;
-  width: 100%;
-  z-index: 2;
-}
-.card {
   border-radius: 0.2rem;
   cursor: pointer;
   position: relative;
 }
-.card::before,
-.card::after {
-  border-radius: inherit;
-  content: '';
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: opacity 500ms;
-  width: 100%;
-}
-.card::after {
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    var(--bc),
-    transparent 40%
-  );
-  opacity: 0;
-  z-index: 1;
-}
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.06),
-    transparent 40%
-  );
-  z-index: 3;
-}
-#cards:hover > section > div > .card::after {
-  opacity: 1;
-}
-.card:hover::after {
-  opacity: 0.25;
-}
 
 .card > .card-content {
-  /* background-color: var(--card-color); */
   border-radius: inherit;
   display: flex;
   flex-direction: column;
