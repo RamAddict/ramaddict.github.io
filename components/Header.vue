@@ -1,7 +1,7 @@
 <template>
   <div class="m-auto max-w-5xl px-8 py-6">
     <header class="flex flex-col gap-4">
-      <nav class="flex flex-row justify-between">
+      <nav class="flex flex-col gap-4 md:flex-row md:justify-between">
         <div class="flex flex-row">
           <div class="m-auto flex shrink-0 flex-row items-center justify-center gap-1">
             <NuxtLink to="/" class="">
@@ -15,12 +15,12 @@
               <span
                 class="font-cursive text-2xl font-bold antialiased duration-700 hover:text-yellow-600
                   hover:transition-opacity"
-                >/{{ p.label.toLowerCase().split(' ').at(-1) }}</span
+                >/{{ capitalizeFirst(getLastSegment(p.to)) }}</span
               >
             </NuxtLink>
           </div>
         </div>
-        <div class="flex flex-row gap-8 text-lg">
+        <div class="flex flex-row justify-center gap-4 text-lg md:gap-8">
           <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/work' }"
             to="/work"
@@ -48,6 +48,16 @@
 <script setup lang="ts">
 const route = useRoute();
 const links = useBreadcrumbItems({ hideRoot: true });
+
+const capitalizeFirst = (str: string | undefined) => {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const getLastSegment = (path: string | undefined) => {
+  if (!path) return '';
+  return path.split('/').filter(Boolean).at(-1) || '';
+};
 </script>
 
 <style scoped>
