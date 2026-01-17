@@ -4,7 +4,7 @@
       <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
     </h1>
     <SkillChips
-      :skills="['Svelte', 'Spring', 'Angular', 'Wasm', 'Postgres', 'Kubernetes']"
+      :skills="['Svelte', 'Spring', 'Angular', 'React', 'AngularJS', 'Wasm', 'Postgres', 'Kubernetes']"
     ></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
       <p>
