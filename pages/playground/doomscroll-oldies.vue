@@ -24,7 +24,7 @@
       <p>
         The concept emerged from recognizing that the infinite scroll mechanic itself isn't the
         problem; it's what we're scrolling through. By applying the same interaction pattern to
-        curated retro game metadata, the app creates a nostalgia-driven unique experience. Each
+        curated retro game metadata, the app creates a unique nostalgia-driven experience. Each
         swipe reveals a new (old) title with cover art, release information, and details, turning
         idle moments into discovery opportunities.
       </p>
@@ -32,19 +32,9 @@
 
     <section class="flex flex-col gap-4 text-xl">
       <h2 class="text-3xl font-medium">Technical Implementation</h2>
-      <p>
-        <strong>Frontend:</strong> Next.js with virtual scrolling and lazy-loaded images. Maintains
-        60fps performance browsing through thousands of game entries without DOM bloat.
-      </p>
-      <p>
-        <strong>Backend:</strong> Convex handles real-time data synchronization via subscriptions.
-        Eliminated the complexity of managing WebSocket connections or implementing polling
-        strategies for live updates.
-      </p>
-      <p>
-        <strong>Infrastructure:</strong> Deployed on Vercel's edge network with ISR for sub-second
-        page loads globally and automatic failover.
-      </p>
+      <p><strong>Frontend:</strong> Next.js with virtual scrolling and lazy-loaded images.</p>
+      <p><strong>Backend:</strong> Convex backend as a service and DB.</p>
+      <p><strong>Infrastructure:</strong> Deployed on Vercel, just for convenience.</p>
     </section>
 
     <section class="flex flex-col gap-4 text-xl">
