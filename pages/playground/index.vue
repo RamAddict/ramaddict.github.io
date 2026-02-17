@@ -24,6 +24,22 @@
             </div>
           </SpotlightCard>
         </NuxtLink>
+        <NuxtLink to="/playground/doomscroll-oldies">
+          <SpotlightCard
+            class="card flex aspect-video flex-col justify-center overflow-hidden border-base-content doomscroll-oldies"
+          >
+            <div class="card-image-bg"></div>
+            <div class="card-content">
+              <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">
+                Doomscroll Oldies
+              </h3>
+              <div class="absolute bottom-0">
+                <p>Retro Game Discovery</p>
+                <p class="text-xs">Next.js + Convex</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
       </div>
     </section>
   </main>
@@ -46,6 +62,11 @@
   background-size: cover;
   opacity: 0.12;
   z-index: 0;
+}
+
+.doomscroll-oldies .card-image-bg {
+  background-image: url('/playground/doomscroll-oldies.png');
+  opacity: 0.15;
 }
 
 .card > .card-content {
