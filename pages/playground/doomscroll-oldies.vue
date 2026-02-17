@@ -35,6 +35,7 @@
       <p><strong>Frontend:</strong> Next.js with virtual scrolling and lazy-loaded images.</p>
       <p><strong>Backend:</strong> Convex backend as a service and DB.</p>
       <p><strong>Infrastructure:</strong> Deployed on Vercel, just for convenience.</p>
+      Data pulled from IGDB.
     </section>
 
     <section class="flex flex-col gap-4 text-xl">
