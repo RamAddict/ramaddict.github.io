@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col items-center antialiased" style="font-family: 'Inter', sans-serif">
-    <header class="flex w-full max-w-[700px] justify-end px-6 py-8">
-      <div class="space-x-2 text-sm font-medium opacity-70">
+    <header class="flex w-full max-w-[700px] items-center justify-between gap-4 px-6 py-8">
+      <NuxtLink to="/arthur" class="text-sm font-bold tracking-tight md:text-base">
+        Arthur Superior SEO
+      </NuxtLink>
+      <div class="shrink-0 space-x-2 text-sm font-medium opacity-70">
         <NuxtLink to="/arthur" class="font-bold transition hover:opacity-100">🇧🇷 PT</NuxtLink>
         <span>|</span>
         <NuxtLink to="/arthur/en" class="transition hover:opacity-100">🇺🇸 EN</NuxtLink>
@@ -14,7 +17,8 @@
           Crio sites que geram clientes para negócios locais
         </h1>
         <p class="mx-auto max-w-lg text-lg opacity-80">
-          Mais de 25 sites criados com foco em geração de leads
+          <strong>Arthur Superior SEO</strong> — mais de 25 sites criados com foco em geração de
+          leads
         </p>
       </section>
 
@@ -38,7 +42,8 @@
         >
           <div class="flex-1 space-y-3 text-center sm:text-left">
             <p class="text-lg opacity-90">
-              Todos os projetos são otimizados para alcançar a <strong>nota máxima</strong> no
+              Todos os projetos da <strong>Arthur Superior SEO</strong> são otimizados para alcançar
+              a <strong>nota máxima</strong> no
               Google Lighthouse, garantindo carregamento rápido, acessibilidade e SEO perfeito.
             </p>
           </div>
@@ -57,7 +62,7 @@
         <p class="text-lg opacity-80">
           Aqui vão alguns exemplos de sites que criei e produzem <i>leads</i> para clientes.
         </p>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <a
             href="https://wigpsicologavinhedo.com.br"
             target="_blank"
@@ -67,6 +72,33 @@
           >
             WIG Psicologia Vinhedo
           </a>
+          <a
+            href="https://miamifloatingstairs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            Miami Floating Stairs
+          </a>
+          <a
+            href="https://miamistoneveneer.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            Miami Stone Veneer
+          </a>
+          <a
+            href="https://dcsuperiorconcrete.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            DC Superior Concrete
+          </a>
         </div>
       </section>
 
@@ -74,13 +106,18 @@
         <div class="rounded-3xl border border-base-content/10 bg-base-100/50 p-6 shadow-sm backdrop-blur-sm md:p-10">
           <h2 class="text-2xl font-bold md:text-3xl">Quer algo assim para o seu negócio?</h2>
           <p class="mt-2 text-lg opacity-80">
-            Preencha os dados abaixo e entrarei em contato o mais rápido possível para conversarmos sobre o seu projeto.
+            Preencha os dados abaixo e a Arthur Superior SEO entrará em contato o mais rápido
+            possível para conversarmos sobre o seu projeto.
           </p>
 
           <form action="https://api.web3forms.com/submit" method="POST" class="mt-8 space-y-5 text-left">
             <input type="hidden" name="access_key" value="1d90509a-8019-4438-89fc-e4560455b566" />
-            <input type="hidden" name="subject" value="Nova Mensagem de Contato - Site Arthur" />
-            <input type="hidden" name="from_name" value="Site Arthur Bianco" />
+            <input
+              type="hidden"
+              name="subject"
+              value="Nova Mensagem de Contato - Arthur Superior SEO"
+            />
+            <input type="hidden" name="from_name" value="Arthur Superior SEO" />
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <div>
@@ -143,7 +180,14 @@
 
 <script setup>
 useHead({
-  title: 'Arthur Bianco - Web Developer',
+  title: 'Arthur Superior SEO - Sites que geram clientes para negócios locais',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Arthur Superior SEO cria sites de alta performance focados em geração de leads para negócios locais.',
+    },
+  ],
   link: [
     {
       rel: 'stylesheet',

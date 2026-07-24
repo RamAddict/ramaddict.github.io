@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col items-center antialiased" style="font-family: 'Inter', sans-serif">
-    <header class="flex w-full max-w-[700px] justify-end px-6 py-8">
-      <div class="space-x-2 text-sm font-medium opacity-70">
+    <header class="flex w-full max-w-[700px] items-center justify-between gap-4 px-6 py-8">
+      <NuxtLink to="/arthur/en" class="text-sm font-bold tracking-tight md:text-base">
+        Arthur Superior SEO
+      </NuxtLink>
+      <div class="shrink-0 space-x-2 text-sm font-medium opacity-70">
         <NuxtLink to="/arthur" class="transition hover:opacity-100">🇧🇷 PT</NuxtLink>
         <span>|</span>
         <NuxtLink to="/arthur/en" class="font-bold transition hover:opacity-100">🇺🇸 EN</NuxtLink>
@@ -14,7 +17,7 @@
           I build websites that generate customers for local businesses
         </h1>
         <p class="mx-auto max-w-lg text-lg opacity-80">
-          25+ websites built with a focus on lead generation
+          <strong>Arthur Superior SEO</strong> — 25+ websites built with a focus on lead generation
         </p>
       </section>
 
@@ -38,7 +41,8 @@
         >
           <div class="flex-1 space-y-3 text-center sm:text-left">
             <p class="text-lg opacity-90">
-              Every project is optimized to achieve a <strong>perfect score</strong> on Google
+              Every <strong>Arthur Superior SEO</strong> project is optimized to achieve a
+              <strong>perfect score</strong> on Google
               Lighthouse, ensuring lightning-fast load times, accessibility, and flawless SEO.
             </p>
           </div>
@@ -55,10 +59,10 @@
       <section class="space-y-6">
         <h2 class="text-xl font-bold">Projects</h2>
         <p class="text-lg opacity-80">
-          I’ve built websites for professionals like psychologists who use them to attract new
-          clients.
+          A few of the sites Arthur Superior SEO has built for contractors and independent
+          professionals who use them to attract new clients.
         </p>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <a
             href="https://wigpsicologavinhedo.com.br"
             target="_blank"
@@ -67,6 +71,33 @@
               backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
           >
             WIG Psicologia Vinhedo
+          </a>
+          <a
+            href="https://miamifloatingstairs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            Miami Floating Stairs
+          </a>
+          <a
+            href="https://miamistoneveneer.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            Miami Stone Veneer
+          </a>
+          <a
+            href="https://dcsuperiorconcrete.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block rounded-2xl border border-base-content/10 bg-base-100/60 p-6 text-center font-medium shadow-sm
+              backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-base-200/60 hover:shadow-md"
+          >
+            DC Superior Concrete
           </a>
         </div>
       </section>
@@ -79,8 +110,8 @@
             Want something like this for your business?
           </h2>
           <p class="mt-2 text-lg opacity-80">
-            Fill out the form below and I'll get back to you as soon as possible to discuss your
-            project.
+            Fill out the form below and Arthur Superior SEO will get back to you as soon as possible
+            to discuss your project.
           </p>
 
           <form
@@ -89,8 +120,12 @@
             class="mt-8 space-y-5 text-left"
           >
             <input type="hidden" name="access_key" value="1d90509a-8019-4438-89fc-e4560455b566" />
-            <input type="hidden" name="subject" value="New Contact Message - Arthur Website" />
-            <input type="hidden" name="from_name" value="Arthur Bianco Website" />
+            <input
+              type="hidden"
+              name="subject"
+              value="New Contact Message - Arthur Superior SEO"
+            />
+            <input type="hidden" name="from_name" value="Arthur Superior SEO" />
             <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
 
             <div>
@@ -162,7 +197,14 @@
 
 <script setup>
 useHead({
-  title: 'Arthur Bianco - Web Developer',
+  title: 'Arthur Superior SEO - Websites that generate customers for local businesses',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Arthur Superior SEO builds high-performance, lead-generation websites for local service businesses.',
+    },
+  ],
   link: [
     {
       rel: 'stylesheet',
