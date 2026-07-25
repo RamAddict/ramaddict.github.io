@@ -40,6 +40,23 @@
             </div>
           </SpotlightCard>
         </NuxtLink>
+        <NuxtLink to="/playground/scrollbar-breakout">
+          <SpotlightCard
+            class="card scrollbar-breakout flex aspect-video flex-col justify-center overflow-hidden
+              border-base-content"
+          >
+            <div class="card-image-bg"></div>
+            <div class="card-content">
+              <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">
+                Scrollbar Breakout
+              </h3>
+              <div class="absolute bottom-0">
+                <p>A game played with the page scrollbar</p>
+                <p class="text-xs">Canvas 2D + window.scrollY</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
       </div>
     </section>
   </main>
@@ -67,6 +84,17 @@
 .doomscroll-oldies .card-image-bg {
   background-image: url('/playground/doomscroll-oldies.png');
   opacity: 0.15;
+}
+
+/* no screenshot for this one — a stack of scrollbar thumbs stands in for it */
+.scrollbar-breakout .card-image-bg {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(202, 138, 4, 0.55) 0 10px,
+    transparent 10px 46px
+  );
+  background-size: auto;
+  opacity: 0.35;
 }
 
 .card > .card-content {
