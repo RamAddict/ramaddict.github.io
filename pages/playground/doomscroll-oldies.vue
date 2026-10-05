@@ -72,7 +72,6 @@
       <p><strong>Infrastructure:</strong> Deployed on Vercel, just for convenience.</p>
       Data pulled from IGDB.
     </section>
-
   </main>
 </template>
 

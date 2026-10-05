@@ -8,6 +8,20 @@
       <h2 class="text-2xl">Most recent work</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <h3 class="m-auto text-center text-3xl font-bold tracking-tighter">
+                Impact Early Education
+              </h3>
+              <div class="absolute bottom-0">
+                <p>Impact Early Education</p>
+                <p class="text-xs">May 2026 - Present · more soon</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </div>
+
         <NuxtLink to="/work/slick-plus">
           <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
             <div class="card-content">
@@ -66,6 +80,21 @@
       <h2 class="text-2xl">Side projects</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <NuxtLink to="/work/rooster">
+          <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
+            <div class="card-content">
+              <div class="m-auto flex items-center gap-3">
+                <NuxtImg width="64" src="/work/rooster/mark.svg" alt="rooster logo" />
+                <span class="text-4xl font-bold tracking-tighter">Rooster</span>
+              </div>
+              <div class="absolute bottom-0">
+                <p>Rooster (PondLabs)</p>
+                <p class="text-xs">Sep 2026 - Present</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
+
         <NuxtLink to="/work/tenacit">
           <SpotlightCard class="card flex aspect-video flex-col justify-center border-base-content">
             <div class="card-content">

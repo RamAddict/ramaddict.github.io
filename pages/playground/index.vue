@@ -8,6 +8,34 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <NuxtLink to="/playground/tapeout">
+          <SpotlightCard
+            class="tapeout card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
+          >
+            <div class="card-image-bg"></div>
+            <div class="card-content">
+              <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">TAPEOUT</h3>
+              <div class="absolute bottom-0">
+                <p>A chip-routing puzzle game</p>
+                <p class="text-xs">React + PixiJS + Babylon.js</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
+        <NuxtLink to="/playground/mosca-do-lule">
+          <SpotlightCard
+            class="mosca card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
+          >
+            <div class="card-image-bg"></div>
+            <div class="card-content">
+              <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">Mosca do Lule</h3>
+              <div class="absolute bottom-0">
+                <p>A fruit fly trained with RL to vote</p>
+                <p class="text-xs">MuJoCo + PPO</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
         <NuxtLink to="/playground/game-of-life">
           <SpotlightCard
             class="card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
@@ -26,7 +54,7 @@
         </NuxtLink>
         <NuxtLink to="/playground/doomscroll-oldies">
           <SpotlightCard
-            class="card flex aspect-video flex-col justify-center overflow-hidden border-base-content doomscroll-oldies"
+            class="doomscroll-oldies card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
           >
             <div class="card-image-bg"></div>
             <div class="card-content">
@@ -42,7 +70,7 @@
         </NuxtLink>
         <NuxtLink to="/playground/scrollbar-breakout">
           <SpotlightCard
-            class="card scrollbar-breakout flex aspect-video flex-col justify-center overflow-hidden
+            class="scrollbar-breakout card flex aspect-video flex-col justify-center overflow-hidden
               border-base-content"
           >
             <div class="card-image-bg"></div>
@@ -84,6 +112,17 @@
 .doomscroll-oldies .card-image-bg {
   background-image: url('/playground/doomscroll-oldies.png');
   opacity: 0.15;
+}
+
+.tapeout .card-image-bg {
+  background-image: url('/playground/tapeout.png');
+  opacity: 0.2;
+}
+
+.mosca .card-image-bg {
+  background-image: url('/playground/mosca.gif');
+  background-position: center;
+  opacity: 0.2;
 }
 
 /* no screenshot for this one — a stack of scrollbar thumbs stands in for it */

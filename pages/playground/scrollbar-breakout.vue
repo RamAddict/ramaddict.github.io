@@ -3,8 +3,8 @@
     <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
       <!-- text column: this is also the game's controller, since its height is the scroll range -->
       <div
-        class="order-2 flex flex-col gap-6 text-justify sm:text-left lg:order-1 lg:min-h-[140vh]
-          lg:w-[44%] lg:shrink-0"
+        class="order-2 flex flex-col gap-6 text-justify sm:text-left lg:order-1 lg:min-h-[140vh] lg:w-[44%]
+          lg:shrink-0"
       >
         <h1 class="mt-8 font-mono text-4xl font-bold text-yellow-600">
           <span @mouseenter="scrambler.scramble()">{{ scrambler.text }}</span>
@@ -34,11 +34,9 @@
         <h2 class="mt-4 text-3xl font-medium">How it works</h2>
         <p class="text-xl">
           Every frame the loop reads
-          <code class="font-mono text-yellow-600"
-            >scrollY / (scrollHeight - innerHeight)</code
-          >, gets a number between 0 and 1, and maps it onto the paddle's vertical travel. Top of
-          the document is the top of the board, bottom is the bottom. That is the entire input
-          layer.
+          <code class="font-mono text-yellow-600">scrollY / (scrollHeight - innerHeight)</code>,
+          gets a number between 0 and 1, and maps it onto the paddle's vertical travel. Top of the
+          document is the top of the board, bottom is the bottom. That is the entire input layer.
         </p>
         <p class="text-xl">
           The board itself is <code class="font-mono text-yellow-600">position: sticky</code>, which
@@ -61,14 +59,19 @@
       <!-- game column -->
       <!-- sticky at every breakpoint so the board never leaves the screen while you play it -->
       <div
-        class="sticky top-4 z-10 order-1 self-start rounded-sm bg-base-100 py-2 lg:order-2
-          lg:flex-1"
+        class="sticky top-4 z-10 order-1 self-start rounded-sm bg-base-100 py-2 lg:order-2 lg:flex-1"
       >
         <div class="mb-3 flex flex-row flex-wrap items-baseline justify-between gap-4 font-mono">
           <div class="flex flex-row gap-5">
-            <span>Score <strong class="text-yellow-600">{{ score }}</strong></span>
-            <span>Best <strong class="text-yellow-600">{{ best }}</strong></span>
-            <span>Level <strong class="text-yellow-600">{{ level }}</strong></span>
+            <span
+              >Score <strong class="text-yellow-600">{{ score }}</strong></span
+            >
+            <span
+              >Best <strong class="text-yellow-600">{{ best }}</strong></span
+            >
+            <span
+              >Level <strong class="text-yellow-600">{{ level }}</strong></span
+            >
           </div>
           <div class="flex flex-row items-center gap-1" aria-label="lives">
             <span
@@ -85,14 +88,14 @@
 
           <div
             v-if="state !== 'playing'"
-            class="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-sm
-              bg-black/55 text-center text-white"
+            class="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-sm bg-black/55 text-center
+              text-white"
           >
             <p class="font-mono text-3xl font-bold">{{ overlay.title }}</p>
             <p class="max-w-sm px-6 text-base">{{ overlay.body }}</p>
             <button
-              class="mt-2 rounded-sm border border-white/70 px-4 py-2 font-mono text-sm uppercase
-                tracking-widest duration-300 hover:bg-white hover:text-black"
+              class="mt-2 rounded-sm border border-white/70 px-4 py-2 font-mono text-sm uppercase tracking-widest
+                duration-300 hover:bg-white hover:text-black"
               @click="primaryAction"
             >
               {{ overlay.action }}
@@ -449,4 +452,3 @@ onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKey);
 });
 </script>
-
