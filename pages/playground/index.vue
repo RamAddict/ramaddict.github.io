@@ -8,6 +8,20 @@
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <NuxtLink to="/playground/padawan">
+          <SpotlightCard
+            class="padawan card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
+          >
+            <div class="card-image-bg"></div>
+            <div class="card-content">
+              <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">Padawan</h3>
+              <div class="absolute bottom-0">
+                <p>Drum rudiments trainer + metronome</p>
+                <p class="text-xs">Vanilla JS + Web Audio</p>
+              </div>
+            </div>
+          </SpotlightCard>
+        </NuxtLink>
         <NuxtLink to="/playground/tapeout">
           <SpotlightCard
             class="tapeout card flex aspect-video flex-col justify-center overflow-hidden border-base-content"
@@ -134,6 +148,19 @@
   );
   background-size: auto;
   opacity: 0.35;
+}
+
+/* no screenshot either — drumstick stripes */
+.padawan .card-image-bg {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(202, 138, 4, 0.55) 0 6px,
+    transparent 6px 24px,
+    rgba(202, 138, 4, 0.55) 24px 30px,
+    transparent 30px 60px
+  );
+  background-size: auto;
+  opacity: 0.3;
 }
 
 .card > .card-content {

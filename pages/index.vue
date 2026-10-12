@@ -202,6 +202,13 @@ const now = [
     stack: 'React · PixiJS · Babylon.js',
     blurb: 'Place the cells. Route the metal. Ship the chip. A chip design puzzle game.',
   },
+  {
+    name: 'Padawan',
+    to: '/playground/padawan',
+    status: 'live',
+    stack: 'JavaScript · Web Audio',
+    blurb: 'Practice-pad trainer for the 40 drum rudiments, with a metronome. No login.',
+  },
 ];
 
 // ponytail: unauthenticated GitHub API, 60 req/h per visitor IP; the line just hides if it fails
