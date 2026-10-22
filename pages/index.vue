@@ -4,14 +4,14 @@
       <div class="just flex flex-row gap-4">
         <NuxtImg
           preload
-          src="me.jpg"
+          src="me-tdc.jpg"
           class="hide-left m-auto h-32 w-32 scale-[4] rounded-full grayscale sm:m-0 sm:h-auto"
           width="200"
           height="200"
           fit="cover"
           placeholder
           format="webp"
-          alt="Arthur Bianco"
+          alt="Arthur Bianco speaking as JavaScript track coordinator at TDC Florianópolis 2026"
         />
         <div class="my-auto flex flex-col gap-2">
           <h2 class="hide-right text-4xl">Hi, my name is Arthur.</h2>
