@@ -5,9 +5,18 @@
 </template>
 
 <script setup lang="ts">
+const { es } = useLang();
 useHead({
-  title: "Arthur Bianco's - Personal website",
-  meta: [{ name: 'description', content: "Arthur Bianco's personal website" }],
+  title: () => (es.value ? 'Arthur Bianco - Sitio personal' : "Arthur Bianco's - Personal website"),
+  meta: [
+    {
+      name: 'description',
+      content: () =>
+        es.value
+          ? 'Desarrollador uruguayo en Asunción. Llevo software de la idea a producción.'
+          : 'Uruguayan developer in Asunción. I take software from idea to production.',
+    },
+  ],
 });
 </script>
 

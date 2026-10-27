@@ -5,20 +5,39 @@
     </h1>
     <SkillChips :skills="['C', 'WebAssembly', 'Emscripten', 'TypeScript', 'NPM']"></SkillChips>
     <section class="flex flex-col gap-4 text-xl">
-      <p>
+      <p v-if="es">
+        <span class="font-cursive text-6xl">N</span>BIS-JS es una adaptación de código abierto del
+        NIST Biometric Image Software (NBIS) a JavaScript usando WebAssembly. El proyecto nació de una
+        necesidad en BRy Tecnologia, donde me di cuenta de que la validación biométrica y la
+        generación de plantillas no tenían por qué ocurrir en el backend.
+      </p>
+      <p v-else>
         <span class="font-cursive text-6xl">N</span>BIS-JS is an open-source port of the NIST
         Biometric Image Software (NBIS) to JavaScript using WebAssembly. This project was born out
         of a professional need at BRy Tecnologia, where I realized that biometric validation and
         template generation didn't necessarily need to happen in the backend.
       </p>
-      <p>
+      <p v-if="es">
+        El NBIS original es un proyecto enorme en C desarrollado por el National Institute of
+        Standards and Technology. Incluye herramientas de procesamiento de imagen, extracción de
+        características de huellas (minucias) y comparación. Me concentré en extraer lo esencial para
+        aplicaciones web: capturar la imagen de una huella, extraer sus minucias y generar una
+        plantilla estandarizada (MINEX II).
+      </p>
+      <p v-else>
         The original NBIS is a massive C project developed by the National Institute of Standards
         and Technology. It includes tools for image processing, fingerprint feature extraction
         (mitosis), and matching. I focused on extracting the core functionality needed for web
         applications: capturing a fingerprint image, extracting its minutiae, and generating a
         standardized template (MINEX II).
       </p>
-      <p>
+      <p v-if="es">
+        Con <b>Emscripten</b> compilé a WebAssembly el código C crítico para el rendimiento. Eso
+        permitió que el navegador hiciera cálculos biométricos complejos a velocidades casi nativas.
+        El resultado fue una librería fácil de integrar en cualquier aplicación web, con un proceso de
+        recolección biométrica fluido y seguro, sin idas y vueltas constantes a una API.
+      </p>
+      <p v-else>
         Using <b>Emscripten</b>, I compiled the performance-critical C code into WebAssembly. This
         allowed the browser to perform complex biometric calculations at near-native speeds. The
         result was a library that could be easily integrated into any web application, providing a
@@ -26,8 +45,17 @@
         to an API.
       </p>
 
-      <h2 class="text-2xl font-medium text-yellow-600">Impact and Connectivity</h2>
-      <p>
+      <h2 class="text-2xl font-medium text-yellow-600">
+        {{ es ? 'Impacto y conectividad' : 'Impact and Connectivity' }}
+      </h2>
+      <p v-if="es">
+        NBIS-JS mejoró mucho la experiencia del registro biométrico. Permitió hacer controles de
+        calidad en tiempo real directamente en el navegador, dándole al usuario una respuesta
+        inmediata sobre si la captura de su huella salió bien. Además, hizo posible la captura
+        biométrica sin conexión, algo clave para quienes trabajan en campo o tienen internet
+        inestable.
+      </p>
+      <p v-else>
         The introduction of NBIS-JS significantly improved the user experience for biometric
         enrollment. It allowed for real-time quality checks directly in the browser, giving users
         immediate feedback on whether their fingerprint capture was successful. Furthermore, it
@@ -35,7 +63,17 @@
         unstable internet connections.
       </p>
 
-      <p>
+      <p v-if="es">
+        Este proyecto también me dio la oportunidad de meterme a fondo en WebAssembly y en
+        optimizaciones de bajo nivel. Compartí lo que aprendí en una charla titulada "WebAssembly:
+        aplicaciones de alto rendimiento en el navegador" en
+        <NuxtLink
+          class="underline duration-700 hover:text-yellow-600 hover:transition-opacity"
+          to="https://thedevconf.com/tdc/2023/future/trilha-web-e-front-end"
+          >The Developers Conference 2023 en Porto Alegre</NuxtLink
+        >.
+      </p>
+      <p v-else>
         This project also gave me the opportunity to dive deep into the world of WebAssembly and
         low-level optimizations. I shared these findings in a talk titled "WebAssembly:
         High-performance applications in the browser" at
@@ -49,11 +87,20 @@
       <NuxtImg
         width="260px"
         src="/work/bry/presentation2.jpg"
-        alt="Picture of Arthur Bianco giving presentation on Web Assembly at The Developers Conference 2023 in Porto Alegre"
+        :alt="
+          es
+            ? 'Foto de Arthur Bianco dando una charla sobre WebAssembly en The Developers Conference 2023 en Porto Alegre'
+            : 'Picture of Arthur Bianco giving presentation on Web Assembly at The Developers Conference 2023 in Porto Alegre'
+        "
         class="m-auto rounded-lg py-4 shadow-lg"
       />
 
-      <p>
+      <p v-if="es">
+        NBIS-JS está disponible como proyecto de código abierto en GitHub y se instala fácilmente
+        por NPM. Sigue siendo una prueba de cómo las tecnologías web modernas pueden darle nueva vida
+        a software antiguo y probado en batalla.
+      </p>
+      <p v-else>
         NBIS-JS is available as an open-source project on GitHub and can be easily installed via
         NPM. It continues to be a testament to how modern web technologies can breathe new life into
         battle-tested legacy software.
@@ -85,6 +132,7 @@
 
 <script setup lang="ts">
 const scrambler = useScrambler('NBISJS');
+const { es } = useLang();
 
 onMounted(() => {
   scrambler.scramble();

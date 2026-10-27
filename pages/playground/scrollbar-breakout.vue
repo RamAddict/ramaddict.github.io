@@ -11,45 +11,85 @@
         </h1>
         <SkillChips :skills="['Vue', 'Canvas 2D', 'requestAnimationFrame', 'window.scrollY']" />
 
-        <p class="text-xl">
+        <p v-if="es" class="text-xl">
+          <span class="font-cursive text-6xl">E</span>l dispositivo de entrada más subestimado de la
+          web es el que ya tienes. Aquí no hay manejador de teclado, ni posición del mouse, ni
+          listener táctil. La paleta se mueve con un solo número: cuánto bajaste en esta página.
+        </p>
+        <p v-else class="text-xl">
           <span class="font-cursive text-6xl">T</span>he most under-appreciated input device on the
           web is the one you already have. There is no keyboard handler here, no mouse position, no
           touch listener. The paddle is driven by exactly one number: how far down this page you
           have scrolled.
         </p>
 
-        <h2 class="mt-4 text-3xl font-medium">How to play</h2>
-        <p class="text-xl">
+        <h2 class="mt-4 text-3xl font-medium">{{ es ? 'Cómo jugar' : 'How to play' }}</h2>
+        <p v-if="es" class="text-xl">
+          Scroll. Ese es todo el esquema de control. Arrastra la barra de scroll del navegador a la
+          derecha, gira la rueda, aprieta las flechas, desliza en el trackpad: cualquier cosa que
+          mueva la página mueve la paleta con ella. El tablero queda fijo mientras esta columna se
+          desliza a su lado.
+        </p>
+        <p v-else class="text-xl">
           Scroll. That is the whole control scheme. Drag the browser's own scrollbar over on the
           right, spin the wheel, press the arrow keys, flick a trackpad — anything that moves the
           page moves the paddle with it. The board stays pinned in place while this column slides
           past it.
         </p>
-        <p class="text-xl">
+        <p v-if="es" class="text-xl">
+          Arriba de la página pone la paleta arriba del tablero, abajo la pone abajo, y todo lo del
+          medio se mapea linealmente. O sea que leer esta página y jugar el juego son, mecánicamente,
+          la misma actividad.
+        </p>
+        <p v-else class="text-xl">
           The top of the page puts the paddle at the top of the board, the bottom puts it at the
           bottom, and everything in between maps linearly. Which means reading this page and playing
           the game are, mechanically, the same activity.
         </p>
 
-        <h2 class="mt-4 text-3xl font-medium">How it works</h2>
-        <p class="text-xl">
+        <h2 class="mt-4 text-3xl font-medium">
+          {{ es ? 'Cómo funciona' : 'How it works' }}
+        </h2>
+        <p v-if="es" class="text-xl">
+          En cada frame el loop lee
+          <code class="font-mono text-yellow-600">scrollY / (scrollHeight - innerHeight)</code>,
+          obtiene un número entre 0 y 1 y lo mapea al recorrido vertical de la paleta. El inicio del
+          documento es arriba del tablero, el final es abajo. Esa es toda la capa de entrada.
+        </p>
+        <p v-else class="text-xl">
           Every frame the loop reads
           <code class="font-mono text-yellow-600">scrollY / (scrollHeight - innerHeight)</code>,
           gets a number between 0 and 1, and maps it onto the paddle's vertical travel. Top of the
           document is the top of the board, bottom is the bottom. That is the entire input layer.
         </p>
-        <p class="text-xl">
+        <p v-if="es" class="text-xl">
+          El tablero en sí es <code class="font-mono text-yellow-600">position: sticky</code>, que es
+          la única razón por la que esto se puede jugar: se fija arriba del viewport para que el
+          juego quede frente a ti mientras la columna que estás leyendo se desliza por debajo.
+        </p>
+        <p v-else class="text-xl">
           The board itself is <code class="font-mono text-yellow-600">position: sticky</code>, which
           is the only reason this is playable at all — it pins to the top of the viewport so the
           game stays in front of you while the column you are reading slides past underneath.
         </p>
-        <p class="text-xl">
+        <p v-if="es" class="text-xl">
+          Lo lindo de apoyarse en la barra de scroll es todo lo que viene gratis: aceleración de la
+          rueda, paginado con teclado, arrastre, inercia táctil y la semántica de accesibilidad de
+          un contenedor con scroll. La velocidad de la paleta también se mide entre frames, así que
+          un scroll rápido le da efecto a la pelota.
+        </p>
+        <p v-else class="text-xl">
           The nice part of leaning on the scrollbar is everything that arrives for free: wheel
           acceleration, keyboard paging, drag, touch momentum, and the accessibility semantics of a
           scroll container. The paddle's velocity is sampled between frames too, so flicking the
           page puts spin on the ball.
         </p>
-        <p class="text-xl">
+        <p v-if="es" class="text-xl">
+          La trampa también viene gratis: una barra de scroll tiene fin. Baja más allá del final de
+          la sección y la paleta simplemente se detiene, estacionada en el borde del tablero,
+          mientras la pelota sigue sin ti.
+        </p>
+        <p v-else class="text-xl">
           The catch is equally free: a scrollbar has ends. Scroll past the bottom of the section and
           the paddle simply stops, parked at the edge of the board, while the ball carries on
           without you.
@@ -64,16 +104,16 @@
         <div class="mb-3 flex flex-row flex-wrap items-baseline justify-between gap-4 font-mono">
           <div class="flex flex-row gap-5">
             <span
-              >Score <strong class="text-yellow-600">{{ score }}</strong></span
+              >{{ es ? 'Puntos' : 'Score' }} <strong class="text-yellow-600">{{ score }}</strong></span
             >
             <span
-              >Best <strong class="text-yellow-600">{{ best }}</strong></span
+              >{{ es ? 'Récord' : 'Best' }} <strong class="text-yellow-600">{{ best }}</strong></span
             >
             <span
-              >Level <strong class="text-yellow-600">{{ level }}</strong></span
+              >{{ es ? 'Nivel' : 'Level' }} <strong class="text-yellow-600">{{ level }}</strong></span
             >
           </div>
-          <div class="flex flex-row items-center gap-1" aria-label="lives">
+          <div class="flex flex-row items-center gap-1" :aria-label="es ? 'vidas' : 'lives'">
             <span
               v-for="i in MAX_LIVES"
               :key="i"
@@ -104,7 +144,7 @@
         </div>
 
         <p class="mt-2 text-center font-mono text-xs opacity-60">
-          scroll position {{ Math.round(paddleT * 100) }}%
+          {{ es ? 'posición del scroll' : 'scroll position' }} {{ Math.round(paddleT * 100) }}%
         </p>
       </div>
     </div>
@@ -112,6 +152,7 @@
 </template>
 
 <script setup lang="ts">
+const { es } = useLang();
 const scrambler = useScrambler('Scrollbar Breakout');
 
 // the page's own scrollbar is the controller, so make it impossible to miss while you are here.
@@ -173,18 +214,24 @@ const overlay = computed(() => {
     case 'ready':
       return {
         title: 'Scrollbar Breakout',
-        body: 'The page scroll is your paddle. Scroll down to move it down. Clear every brick.',
-        action: 'Launch',
+        body: es.value
+          ? 'El scroll de la página es tu paleta. Baja el scroll para bajarla. Rompe todos los ladrillos.'
+          : 'The page scroll is your paddle. Scroll down to move it down. Clear every brick.',
+        action: es.value ? 'Lanzar' : 'Launch',
       };
     case 'lost-life':
-      return { title: 'Missed', body: `${lives.value} ball(s) left.`, action: 'Launch' };
+      return es.value
+        ? { title: 'Fallaste', body: `Te quedan ${lives.value} pelota(s).`, action: 'Lanzar' }
+        : { title: 'Missed', body: `${lives.value} ball(s) left.`, action: 'Launch' };
     case 'gameover':
-      return { title: 'Game Over', body: `Final score: ${score.value}.`, action: 'Play again' };
+      return es.value
+        ? { title: 'Fin del juego', body: `Puntaje final: ${score.value}.`, action: 'Jugar de nuevo' }
+        : { title: 'Game Over', body: `Final score: ${score.value}.`, action: 'Play again' };
     case 'cleared':
       return {
-        title: `Level ${level.value - 1} cleared`,
-        body: 'Fresh bricks, faster ball.',
-        action: 'Continue',
+        title: es.value ? `Nivel ${level.value - 1} superado` : `Level ${level.value - 1} cleared`,
+        body: es.value ? 'Ladrillos nuevos, pelota más rápida.' : 'Fresh bricks, faster ball.',
+        action: es.value ? 'Continuar' : 'Continue',
       };
     default:
       return { title: '', body: '', action: '' };

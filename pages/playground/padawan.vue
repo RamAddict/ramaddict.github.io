@@ -12,7 +12,13 @@
     </h1>
     <SkillChips :skills="['JavaScript', 'Web Audio API', 'GitHub Pages']" />
     <section class="flex flex-col gap-4 text-xl">
-      <p>
+      <p v-if="es">
+        <span class="font-cursive text-6xl">U</span>n entrenador gratuito de pad de práctica para
+        los 40 rudimentos internacionales de batería de la PAS. Elige un rudimento, mira el
+        sticking, escúchalo sonar sobre un metrónomo y tócalo junto en tu pad. Sin registro, sin
+        instalar nada, sin rastreo.
+      </p>
+      <p v-else>
         <span class="font-cursive text-6xl">A</span> free practice-pad trainer for the 40 PAS
         International Drum Rudiments. Pick a rudiment, see the sticking, hear it played over a
         metronome and play along on your pad. No login, no install, no tracking.
@@ -31,28 +37,48 @@
       </div>
       <p class="text-center text-base">
         <a class="link" href="https://ramaddict.github.io/padawan/" target="_blank"
-          >open it full screen</a
+          >{{ es ? 'ábrelo en pantalla completa' : 'open it full screen' }}</a
         >
       </p>
       <ul class="flex list-disc flex-col gap-2 pl-6">
-        <li>
+        <li v-if="es">
+          <strong>Sticking</strong> con acentos, flams, drags y buzz strokes, con la nota actual
+          iluminada mientras suena.
+        </li>
+        <li v-else>
           <strong>Sticking</strong> with accents, flams, drags and buzz strokes, the current note
           lit up as it plays.
         </li>
-        <li>
+        <li v-if="es">
+          <strong>Entrenador de velocidad:</strong> +5 BPM cada 4 vueltas, y recuerda tu tempo para
+          cada rudimento.
+        </li>
+        <li v-else>
           <strong>Speed trainer:</strong> +5 BPM every 4 loops, and it remembers your tempo for each
           rudiment.
         </li>
-        <li>
+        <li v-if="es">
+          <strong>Metrónomo libre</strong> con compases, subdivisiones hasta seisillos, acentos por
+          tiempo, un péndulo y tap tempo.
+        </li>
+        <li v-else>
           <strong>Free metronome</strong> with time signatures, subdivisions up to sextuplets,
           per-beat accents, a pendulum and tap tempo.
         </li>
-        <li>
+        <li v-if="es">
+          <strong>Editor</strong> para tus propios rudimentos, guardados en el navegador. En inglés,
+          portugués y español.
+        </li>
+        <li v-else>
           <strong>Editor</strong> for your own rudiments, saved in the browser. English, Portuguese
           and Spanish.
         </li>
       </ul>
-      <p>
+      <p v-if="es">
+        Archivos estáticos sin más, sin paso de build, con licencia MIT. Cada rudimento es un patrón
+        corto en un string, así que una corrección es un PR de una línea.
+      </p>
+      <p v-else>
         Plain static files, no build step, MIT licensed. Every rudiment is one short pattern string,
         so corrections are a one-line PR.
       </p>
@@ -61,6 +87,7 @@
 </template>
 
 <script setup lang="ts">
+const { es } = useLang();
 const scrambler = useScrambler('Padawan');
 
 onMounted(() => {

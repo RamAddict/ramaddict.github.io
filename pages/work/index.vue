@@ -1,11 +1,17 @@
 <template>
   <main class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible text-justify sm:text-left">
     <section class="flex flex-col gap-4 rounded-3xl px-8">
-      <h1 class="text-4xl">Work</h1>
-      <p class="text-2xl">Thing's I've made or learned at the companies I have worked for.</p>
+      <h1 class="text-4xl">{{ es ? 'Trabajo' : 'Work' }}</h1>
+      <p class="text-2xl">
+        {{
+          es
+            ? 'Los problemas que me tocaron y lo que hice con ellos.'
+            : 'The problems I was handed, and what I did about them.'
+        }}
+      </p>
     </section>
     <section class="flex flex-col gap-4 rounded-3xl px-8">
-      <h2 class="text-2xl">Most recent work</h2>
+      <h2 class="text-2xl">{{ es ? 'Trabajo reciente' : 'Most recent work' }}</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
@@ -16,7 +22,7 @@
               </h3>
               <div class="absolute bottom-0">
                 <p>Impact Early Education</p>
-                <p class="text-xs">May 2026 - Present · more soon</p>
+                <p class="text-xs">{{ es ? 'May 2026 - Actualidad · más pronto' : 'May 2026 - Present · more soon' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -33,7 +39,7 @@
               />
               <div class="absolute bottom-0">
                 <p>Slick Plus</p>
-                <p class="text-xs">Mar 2024 - Present</p>
+                <p class="text-xs">{{ es ? 'Mar 2024 - Actualidad' : 'Mar 2024 - Present' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -45,7 +51,7 @@
               <h3 class="m-auto text-center text-3xl font-bold tracking-tighter">Reps&Co</h3>
               <div class="absolute bottom-0">
                 <p>Reps&Co</p>
-                <p class="text-xs">Apr 2025 - Nov 2025</p>
+                <p class="text-xs">{{ es ? 'Abr 2025 - Nov 2025' : 'Apr 2025 - Nov 2025' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -68,8 +74,8 @@
             <div class="card-content">
               <NuxtImg width="120" src="/work/ecl-logo.png" alt="ecl logo" class="m-auto" />
               <div class="absolute bottom-0">
-                <p>Embedded Computing Laboratory</p>
-                <p class="text-xs">Aug 2018 - Jul 2020</p>
+                <p>{{ es ? 'Laboratorio de Computación Embebida' : 'Embedded Computing Laboratory' }}</p>
+                <p class="text-xs">{{ es ? 'Ago 2018 - Jul 2020' : 'Aug 2018 - Jul 2020' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -77,7 +83,7 @@
       </div>
     </section>
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
-      <h2 class="text-2xl">Side projects</h2>
+      <h2 class="text-2xl">{{ es ? 'Proyectos propios' : 'Side projects' }}</h2>
       <hr class="mb-4 opacity-50" />
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <NuxtLink to="/work/rooster">
@@ -89,7 +95,7 @@
               </div>
               <div class="absolute bottom-0">
                 <p>Rooster (PondLabs)</p>
-                <p class="text-xs">Sep 2026 - Present</p>
+                <p class="text-xs">{{ es ? 'Sep 2026 - Actualidad' : 'Sep 2026 - Present' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -101,7 +107,7 @@
               <NuxtImg width="160" src="/work/tenacit_logo.png" alt="tenacit logo" class="m-auto" />
               <div class="absolute bottom-0">
                 <p>Tenacit</p>
-                <p class="text-xs">Dec 2022 - Mar 2024</p>
+                <p class="text-xs">{{ es ? 'Dic 2022 - Mar 2024' : 'Dec 2022 - Mar 2024' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -123,7 +129,9 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { es } = useLang();
+</script>
 
 <style scoped lang="css">
 .card {

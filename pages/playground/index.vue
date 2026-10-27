@@ -1,8 +1,14 @@
 <template>
   <main class="mx-auto flex max-w-5xl flex-col gap-8 overflow-visible text-justify sm:text-left">
     <section class="flex flex-col gap-4 rounded-3xl px-8">
-      <h1 class="text-4xl">Playground</h1>
-      <p class="text-2xl">A space for experiments, small tools, and creative coding.</p>
+      <h1 class="text-4xl">{{ es ? 'Experimentos' : 'Playground' }}</h1>
+      <p class="text-2xl">
+        {{
+          es
+            ? 'Un espacio para experimentos, herramientas pequeñas y programación creativa.'
+            : 'A space for experiments, small tools, and creative coding.'
+        }}
+      </p>
     </section>
 
     <section class="flex flex-col gap-4 rounded-3xl px-8 py-6">
@@ -16,7 +22,7 @@
             <div class="card-content">
               <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">Padawan</h3>
               <div class="absolute bottom-0">
-                <p>Drum rudiments trainer + metronome</p>
+                <p>{{ es ? 'Entrenador de rudimentos de batería + metrónomo' : 'Drum rudiments trainer + metronome' }}</p>
                 <p class="text-xs">Vanilla JS + Web Audio</p>
               </div>
             </div>
@@ -30,7 +36,7 @@
             <div class="card-content">
               <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">TAPEOUT</h3>
               <div class="absolute bottom-0">
-                <p>A chip-routing puzzle game</p>
+                <p>{{ es ? 'Un juego de puzles de enrutado de chips' : 'A chip-routing puzzle game' }}</p>
                 <p class="text-xs">React + PixiJS + Babylon.js</p>
               </div>
             </div>
@@ -44,7 +50,7 @@
             <div class="card-content">
               <h3 class="m-auto text-center text-2xl font-bold tracking-tighter">Mosca do Lule</h3>
               <div class="absolute bottom-0">
-                <p>A fruit fly trained with RL to vote</p>
+                <p>{{ es ? 'Una mosca de la fruta entrenada con RL para votar' : 'A fruit fly trained with RL to vote' }}</p>
                 <p class="text-xs">MuJoCo + PPO</p>
               </div>
             </div>
@@ -61,7 +67,7 @@
               </h3>
               <div class="absolute bottom-0">
                 <p>Game of Life</p>
-                <p class="text-xs">WebGPU Experiment</p>
+                <p class="text-xs">{{ es ? 'Experimento con WebGPU' : 'WebGPU Experiment' }}</p>
               </div>
             </div>
           </SpotlightCard>
@@ -76,7 +82,7 @@
                 Doomscroll Oldies
               </h3>
               <div class="absolute bottom-0">
-                <p>Retro Game Discovery</p>
+                <p>{{ es ? 'Descubre juegos retro' : 'Retro Game Discovery' }}</p>
                 <p class="text-xs">Next.js + Convex</p>
               </div>
             </div>
@@ -93,7 +99,7 @@
                 Scrollbar Breakout
               </h3>
               <div class="absolute bottom-0">
-                <p>A game played with the page scrollbar</p>
+                <p>{{ es ? 'Un juego que se juega con la barra de scroll' : 'A game played with the page scrollbar' }}</p>
                 <p class="text-xs">Canvas 2D + window.scrollY</p>
               </div>
             </div>
@@ -104,7 +110,9 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { es } = useLang();
+</script>
 
 <style scoped lang="css">
 .card {

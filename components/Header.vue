@@ -15,7 +15,7 @@
               <span
                 class="font-cursive text-2xl font-bold antialiased duration-700 hover:text-yellow-600
                   hover:transition-opacity"
-                >/{{ capitalizeFirst(getLastSegment(p.to)) }}</span
+                >/{{ segmentLabel(getLastSegment(p.to)) }}</span
               >
             </NuxtLink>
           </div>
@@ -25,20 +25,30 @@
             :class="{ 'text-yellow-600': route.path === '/work' }"
             to="/work"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
-            >Work</NuxtLink
+            >{{ es ? 'Trabajo' : 'Work' }}</NuxtLink
           >
           <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/playground' }"
             to="/playground"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
-            >Playground</NuxtLink
+            >{{ es ? 'Experimentos' : 'Playground' }}</NuxtLink
           >
           <NuxtLink
             :class="{ 'text-yellow-600': route.path === '/contact' }"
             to="/contact"
             class="mt-auto duration-700 hover:text-yellow-600 hover:transition-opacity"
-            >Contact</NuxtLink
+            >{{ es ? 'Contacto' : 'Contact' }}</NuxtLink
           >
+          <button
+            class="mt-auto font-mono text-sm duration-700 hover:text-yellow-600 hover:transition-opacity"
+            :aria-label="es ? 'Switch to English' : 'Cambiar a español'"
+            @click="setLang(es ? 'en' : 'es')"
+          >
+            <span :class="{ 'text-yellow-600': !es }">EN</span>/<span
+              :class="{ 'text-yellow-600': es }"
+              >ES</span
+            >
+          </button>
         </div>
       </nav>
     </header>
@@ -48,6 +58,15 @@
 <script setup lang="ts">
 const route = useRoute();
 const links = useBreadcrumbItems({ hideRoot: true });
+const { es, setLang } = useLang();
+
+const segmentsEs: Record<string, string> = {
+  work: 'Trabajo',
+  playground: 'Experimentos',
+  contact: 'Contacto',
+};
+const segmentLabel = (segment: string) =>
+  capitalizeFirst(es.value ? (segmentsEs[segment] ?? segment) : segment);
 
 const capitalizeFirst = (str: string | undefined) => {
   if (!str) return '';

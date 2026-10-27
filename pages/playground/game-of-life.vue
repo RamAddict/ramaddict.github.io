@@ -16,15 +16,18 @@
         <span
           class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0
             ![clip:rect(0,0,0,0)]"
-          >Loading...</span
+          >{{ es ? 'Cargando...' : 'Loading...' }}</span
         >
       </div>
     </div>
-    <div v-else class="m-auto my-20 text-center text-xl">WebGPU not supported :/</div>
+    <div v-else class="m-auto my-20 text-center text-xl">
+      {{ es ? 'WebGPU no es compatible :/' : 'WebGPU not supported :/' }}
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
+const { es } = useLang();
 import shader from '~/public/playground/shader.wgsl?raw';
 import computeShader from '~/public/playground/compute.wgsl?raw';
 

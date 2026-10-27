@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   devServer: {
     port: 4501,
   },
+  site: {
+    url: 'https://ramaddict.github.io',
+  },
 
   modules: [
     '@nuxtjs/tailwindcss',
