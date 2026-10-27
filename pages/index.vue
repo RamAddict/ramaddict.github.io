@@ -5,7 +5,7 @@
         <NuxtImg
           preload
           src="me-tdc.jpg"
-          class="hide-left m-auto h-32 w-32 scale-[4] rounded-full grayscale sm:m-0 sm:h-auto"
+          class="hide-left m-auto h-32 w-32 shrink-0 scale-[4] self-center rounded-full object-cover grayscale sm:m-0"
           width="200"
           height="200"
           fit="cover"
