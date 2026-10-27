@@ -22,7 +22,7 @@
           <h1 class="hide-right-delay text-2xl">
             {{
               es
-                ? 'Llevo software de un boceto en una servilleta a producción, y me quedo hasta que funciona.'
+                ? 'De la idea a producción, y no me voy hasta que funcione.'
                 : 'I take software from a napkin sketch to production, and I stay until it works.'
             }}
           </h1>
